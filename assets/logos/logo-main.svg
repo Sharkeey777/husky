@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="title">
+  <title>HUSKY</title>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7edcff"/>
+      <stop offset="100%" stop-color="#1d7fce"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="104" height="104" rx="28" fill="#ffffff"/>
+  <path d="M28 26 52 44 42 86 24 58V30c0-2 2-4 4-4Zm64 0c2 0 4 2 4 4v28L78 86 68 44l24-18Z" fill="#13213a"/>
+  <path d="M60 32 92 26 78 86H42L28 26l32 6Z" fill="url(#bg)"/>
+  <path d="M60 47c7 0 15 3 21 7L72 86H48L39 54c6-4 14-7 21-7Z" fill="#c8ebff"/>
+  <circle cx="49" cy="59" r="4" fill="#13213a"/>
+  <circle cx="71" cy="59" r="4" fill="#13213a"/>
+  <path d="M49 72c4 3 8 5 11 5s7-2 11-5" stroke="#13213a" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M54 66 60 72 66 66" stroke="#13213a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

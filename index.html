@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Баскетбольный клуб «Хаски» — детский баскетбол в Ростове-на-Дону</title>
+    <meta
+      name="description"
+      content="Баскетбольный клуб «Хаски» в Ростове-на-Дону: тренировки для детей и подростков, турниры, праздники, поездки и летний лагерь. Живая команда и сильная спортивная атмосфера."
+    />
+    <meta name="theme-color" content="#102f4d" />
+    <!-- TODO перед деплоем: замените домен-плейсхолдер husky-basketball.ru на реальный.
+         Проще всего скриптом:  ./set-domain.sh https://ваш-домен.ru   (см. README) -->
+    <link rel="canonical" href="https://husky-basketball.ru/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Баскетбольный клуб «Хаски»" />
+    <meta property="og:title" content="Баскетбольный клуб «Хаски» — детский баскетбол в Ростове-на-Дону" />
+    <meta
+      property="og:description"
+      content="Тренировки, команда, турниры, праздники и летний лагерь. Клуб «Хаски» — там, где ребёнок растёт в игре и характере."
+    />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:image" content="https://husky-basketball.ru/assets/ui/og-cover.jpg" />
+    <meta property="og:image:width" content="1360" />
+    <meta property="og:image:height" content="764" />
+    <meta property="og:image:alt" content="Баскетбольный клуб «Хаски»" />
+    <meta property="og:url" content="https://husky-basketball.ru/" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Баскетбольный клуб «Хаски»" />
+    <meta name="twitter:description" content="Детский баскетбол в Ростове-на-Дону: тренировки, турниры, праздники и летний лагерь." />
+    <meta name="twitter:image" content="https://husky-basketball.ru/assets/ui/og-cover.jpg" />
+
+    <link rel="icon" type="image/jpeg" href="./assets/logos/logo-new.jpg" />
+    <link rel="apple-touch-icon" href="./assets/logos/logo-new.jpg" />
+    <link rel="preload" href="./assets/gallery/training/training-01.jpg" as="image" fetchpriority="high" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700;800&family=Onest:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap"
+    />
+
+    <link rel="stylesheet" href="./styles/styles.css" />
+
+    <!-- SEO: schema.org SportsClub -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SportsClub",
+        "name": "Баскетбольный клуб «Хаски»",
+        "sport": "Basketball",
+        "description": "Детско-юношеский баскетбольный клуб в Ростове-на-Дону: тренировки, турниры, праздники, поездки и летний лагерь.",
+        "url": "https://husky-basketball.ru/",
+        "logo": "https://husky-basketball.ru/assets/logos/logo-main.svg",
+        "telephone": "+7-951-496-74-52",
+        "email": "bk.husky@mail.ru",
+        "areaServed": "Ростов-на-Дону",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ростов-на-Дону",
+          "addressCountry": "RU"
+        },
+        "sameAs": [
+          "https://vk.com/huskybasketball",
+          "https://t.me/basketbolhasku"
+        ]
+      }
+    </script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+    <!-- Бумажная текстура и декоративный слой -->
+    <div class="paper-grain" aria-hidden="true"></div>
+
+    <!-- ================= HEADER ================= -->
+    <header class="site-header" id="top">
+      <div class="wrap header-inner">
+        <a class="brand" href="#top" aria-label="Баскетбольный клуб Хаски — наверх">
+          <img src="./assets/logos/logo-new.jpg" alt="Логотип клуба Хаски" width="44" height="44" />
+          <span class="brand-name">Хаски</span>
+        </a>
+
+        <nav class="nav" aria-label="Основная навигация">
+          <a href="#about">О клубе</a>
+          <a href="#why">Почему мы</a>
+          <a href="#gallery">Галерея</a>
+          <a href="#events">Мероприятия</a>
+          <a href="#camp">Лагерь</a>
+        </nav>
+
+        <button class="btn btn-primary btn-sm header-cta" type="button" data-open-contact>
+          Записаться
+        </button>
+
+        <button class="burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Открыть меню">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu" hidden>
+        <nav aria-label="Мобильная навигация">
+          <a href="#about">О клубе</a>
+          <a href="#why">Почему мы</a>
+          <a href="#gallery">Галерея</a>
+          <a href="#events">Мероприятия</a>
+          <a href="#camp">Лагерь</a>
+          <a href="#contact">Контакты</a>
+        </nav>
+        <button class="btn btn-primary" type="button" data-open-contact>Записаться на тренировку</button>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ================= HERO ================= -->
+      <section class="hero" id="hero">
+        <div class="hero-bg" aria-hidden="true">
+          <img src="./assets/gallery/training/training-01.jpg" alt="" width="1320" height="880" fetchpriority="high" decoding="async" />
+          <span class="hero-scrim"></span>
+        </div>
+
+        <div class="wrap hero-inner">
+          <div class="hero-copy">
+            <span class="sticker sticker-caveat hero-sticker">Мы — стая 🐺</span>
+            <h1 class="hero-title">
+              <span class="hero-title-top">Баскетбольный клуб</span>
+              <span class="husky-word">HUSKY</span>
+            </h1>
+            <p class="hero-lead">
+              Тренируем детей и подростков, растим технику, характер и командную игру.
+              Живой клуб с турнирами, праздниками, поездками и летним лагерем.
+            </p>
+
+            <div class="hero-actions">
+              <button class="btn btn-primary" type="button" data-open-contact>Записаться на тренировку</button>
+              <a class="btn btn-ghost" href="#events">Посмотреть мероприятия</a>
+              <a class="btn btn-line" href="https://yandex.ru/maps/-/CTu0aUkq" target="_blank" rel="noopener noreferrer">Мы на карте</a>
+            </div>
+
+            <ul class="hero-points" aria-label="Коротко о клубе">
+              <li><span class="ball-dot" aria-hidden="true"></span>Дети и подростки</li>
+              <li><span class="ball-dot" aria-hidden="true"></span>Тренировки и турниры</li>
+              <li><span class="ball-dot" aria-hidden="true"></span>Ростов-на-Дону</li>
+            </ul>
+          </div>
+        </div>
+
+        <a class="hero-scroll" href="#about" aria-label="Листать вниз"><span></span></a>
+      </section>
+
+      <!-- ================= О КЛУБЕ ================= -->
+      <section class="section about" id="about">
+        <div class="wrap">
+          <div class="about-grid">
+            <div class="about-copy reveal">
+              <span class="kicker">О клубе</span>
+              <h2>Спорт, который становится опорой</h2>
+              <p class="lead">
+                «Хаски» — это не просто секция. Это команда, тренировки в ритме,
+                характер и ощущение, что тебя поддержат на площадке и за её пределами.
+              </p>
+              <div class="about-lines">
+                <p><b>Тренируем детей</b> и помогаем полюбить движение и игру.</p>
+                <p><b>Развиваем технику,</b> дисциплину и командную игру.</p>
+                <p><b>Создаём среду,</b> где хочется расти и возвращаться в зал.</p>
+                <p><b>Играем турниры</b> и проводим клубные мероприятия.</p>
+              </div>
+            </div>
+            <figure class="about-photo photo-card reveal reveal-delay">
+              <span class="tape tape-top" aria-hidden="true"></span>
+              <img src="./assets/gallery/training/training-04.jpg" alt="Светлый спортивный зал и тренировка Хаски" width="1450" height="967" loading="lazy" />
+              <figcaption class="sticker-caveat">на тренировке</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= ПОЧЕМУ ВЫБИРАЮТ НАС ================= -->
+      <section class="section why" id="why">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <h2>Почему родители выбирают «Хаски»</h2>
+            <p class="lead">Коротко о главном — за что нас ценят семьи.</p>
+          </div>
+
+          <div class="why-grid">
+            <article class="note-card reveal">
+              <span class="note-emoji" aria-hidden="true">🏀</span>
+              <h3>Тренировки и развитие</h3>
+              <p>Регулярные занятия: работа с мячом, техника, движение и понимание игры.</p>
+            </article>
+            <article class="note-card reveal">
+              <span class="note-emoji" aria-hidden="true">🤝</span>
+              <h3>Командная атмосфера</h3>
+              <p>Ребёнок чувствует поддержку команды и учится играть друг для друга.</p>
+            </article>
+            <article class="note-card reveal">
+              <span class="note-emoji" aria-hidden="true">🏆</span>
+              <h3>Турниры и игры</h3>
+              <p>Игровые форматы дают настоящий соревновательный опыт и уверенность.</p>
+            </article>
+            <article class="note-card reveal">
+              <span class="note-emoji" aria-hidden="true">🎉</span>
+              <h3>Праздники и события</h3>
+              <p>Клубная жизнь не только в зале: тёплые праздники и общие традиции.</p>
+            </article>
+            <article class="note-card reveal">
+              <span class="note-emoji" aria-hidden="true">⛺</span>
+              <h3>Поездки и лагерь</h3>
+              <p>Летний лагерь и выезды — новый масштаб, дружба и заряд на сезон.</p>
+            </article>
+            <article class="note-card reveal">
+              <span class="note-emoji" aria-hidden="true">📸</span>
+              <h3>Открытость клуба</h3>
+              <p>Мы показываем жизнь команды в фото и соцсетях — всё честно и по-настоящему.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= ЖИЗНЬ КЛУБА (категории) ================= -->
+      <section class="section life" id="life">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <span class="kicker">Как проходит жизнь клуба</span>
+            <h2>Целый сезон в одном ритме</h2>
+            <p class="lead">Тренировки, игры, праздники и поездки — из этого складывается наш год.</p>
+          </div>
+
+          <ul class="life-chips reveal" aria-label="Направления клубной жизни">
+            <li>Тренировки</li>
+            <li>Турниры</li>
+            <li>8 Марта</li>
+            <li>23 Февраля</li>
+            <li>Новый год</li>
+            <li>Летний лагерь</li>
+            <li>Поездки</li>
+            <li>Награждения</li>
+          </ul>
+
+          <div class="life-mosaic">
+            <figure class="photo-card m1 reveal"><span class="tape tape-corner" aria-hidden="true"></span><img src="./assets/gallery/training/training-02.jpg" alt="Игрок Хаски на тренировке" width="933" height="1400" loading="lazy" /></figure>
+            <figure class="photo-card m2 reveal"><span class="tape tape-top" aria-hidden="true"></span><img src="./assets/gallery/events/event-01.jpg" alt="Клубное событие Хаски" width="1320" height="880" loading="lazy" /></figure>
+            <figure class="photo-card m3 reveal"><span class="tape tape-corner" aria-hidden="true"></span><img src="./assets/gallery/team/team-03.jpg" alt="Игрок команды Хаски" width="933" height="1400" loading="lazy" /></figure>
+            <figure class="photo-card m4 reveal"><span class="tape tape-top" aria-hidden="true"></span><img src="./assets/gallery/events/event-04.jpg" alt="Команда Хаски на мероприятии" width="1600" height="1067" loading="lazy" /></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= ГАЛЕРЕЯ ================= -->
+      <section class="section gallery" id="gallery">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <h2>Фотоальбом команды</h2>
+            <p class="lead">Живые кадры клуба. Нажми на фото, чтобы рассмотреть поближе.</p>
+          </div>
+
+          <div class="gallery-grid" id="gallery-grid">
+            <!-- Наполняется из JS (data-* ниже — источник) -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= МЕРОПРИЯТИЯ ================= -->
+      <section class="section events" id="events">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <span class="kicker">У нас не только тренировки</span>
+            <h2>Мероприятия клуба</h2>
+            <p class="lead">Праздники, турниры и выезды, которые делают команду ближе.</p>
+          </div>
+
+          <div class="timeline">
+            <article class="event-note reveal">
+              <span class="event-badge">🎄</span>
+              <h3>Новый год вместе</h3>
+              <p>Тёплый клубный праздник в конце года — командой и с семьями.</p>
+            </article>
+            <article class="event-note reveal">
+              <span class="event-badge">🌷</span>
+              <h3>8 Марта и 23 Февраля</h3>
+              <p>Поздравляем своих: девчонок и мальчишек команды в их праздники.</p>
+            </article>
+            <article class="event-note reveal">
+              <span class="event-badge">🏀</span>
+              <h3>Клубные турниры</h3>
+              <p>Матчи и игровые форматы, где проявляется характер и растёт мастерство.</p>
+            </article>
+            <article class="event-note reveal">
+              <span class="event-badge">⛺</span>
+              <h3>Летние поездки в лагерь</h3>
+              <p>Каждое лето — тренировки, игры, команда и настоящий отдых.</p>
+            </article>
+            <article class="event-note reveal">
+              <span class="event-badge">🥇</span>
+              <h3>Награждения</h3>
+              <p>Отмечаем успехи ребят и радуемся достижениям всей командой.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= ЛЕТНИЙ ЛАГЕРЬ ================= -->
+      <section class="section camp" id="camp">
+        <div class="wrap camp-grid">
+          <div class="camp-photos reveal">
+            <figure class="photo-card camp-a"><span class="tape tape-top" aria-hidden="true"></span><img src="./assets/gallery/events/event-02.jpg" alt="Летние клубные активности Хаски" width="853" height="1280" loading="lazy" /></figure>
+            <figure class="photo-card camp-b"><span class="tape tape-corner" aria-hidden="true"></span><img src="./assets/gallery/events/event-03.jpg" alt="Команда Хаски летом" width="933" height="1400" loading="lazy" /></figure>
+          </div>
+          <div class="camp-copy reveal reveal-delay">
+            <span class="sticker-caveat">каждое лето ☀️</span>
+            <h2>Летний лагерь «Хаски»</h2>
+            <p class="lead">
+              Каждое лето клуб выезжает в лагерь: тренировки, игры, команда и отдых.
+              Дети возвращаются с новыми друзьями, эмоциями и зарядом на весь сезон.
+            </p>
+            <div class="camp-tags">
+              <span>Тренировки</span><span>Игры</span><span>Команда</span><span>Отдых</span>
+            </div>
+            <button class="btn btn-primary" type="button" data-open-contact>Узнать про лагерь</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= СОЦСЕТИ ================= -->
+      <section class="section social" id="social">
+        <div class="wrap social-inner reveal">
+          <div class="social-copy">
+            <h2>Следите за жизнью клуба</h2>
+            <p class="lead">Фото, видео и новости команды — в наших соцсетях.</p>
+          </div>
+          <div class="social-links">
+            <a class="social-btn vk" href="https://vk.com/huskybasketball" target="_blank" rel="noopener noreferrer" aria-label="Группа Хаски во ВКонтакте">
+              <img src="./assets/icons/vk.png" alt="" width="26" height="26" aria-hidden="true" />
+              <span>ВКонтакте</span>
+            </a>
+            <a class="social-btn tg" href="https://t.me/basketbolhasku" target="_blank" rel="noopener noreferrer" aria-label="Канал Хаски в Telegram">
+              <img src="./assets/icons/telegram.png" alt="" width="26" height="26" aria-hidden="true" />
+              <span>Telegram</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= ГДЕ НАС НАЙТИ ================= -->
+      <section class="section find" id="find">
+        <div class="wrap find-grid">
+          <div class="find-copy reveal">
+            <span class="kicker">Где нас найти</span>
+            <h2>Мы в Ростове-на-Дону</h2>
+            <p class="lead">
+              Открой клуб на Яндекс.Картах, чтобы построить маршрут и посмотреть,
+              как удобно добраться до зала.
+            </p>
+            <a class="btn btn-primary" href="https://yandex.ru/maps/-/CTu0aUkq" target="_blank" rel="noopener noreferrer">Открыть на Яндекс.Картах</a>
+            <div class="find-contacts">
+              <a href="tel:+79514967452">+7 951 496 74 52</a>
+              <a href="mailto:bk.husky@mail.ru">bk.husky@mail.ru</a>
+            </div>
+          </div>
+
+          <div class="find-map reveal reveal-delay">
+            <iframe
+              title="Клуб «Хаски» на Яндекс.Картах"
+              src="https://yandex.ru/map-widget/v1/?ll=39.720349%2C47.222078&mode=search&text=%D0%B1%D0%B0%D1%81%D0%BA%D0%B5%D1%82%D0%B1%D0%BE%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BA%D0%BB%D1%83%D0%B1%20Husky%20%D0%A0%D0%BE%D1%81%D1%82%D0%BE%D0%B2-%D0%BD%D0%B0-%D0%94%D0%BE%D0%BD%D1%83&z=11"
+              width="100%"
+              height="420"
+              loading="lazy"
+              allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= ФИНАЛЬНЫЙ CTA ================= -->
+      <section class="section final" id="contact">
+        <div class="wrap final-inner reveal">
+          <span class="sticker-caveat">давай в команду!</span>
+          <h2>Готовы попробовать баскетбол в «Хаски»?</h2>
+          <p class="lead">Напишите или позвоните — расскажем про тренировки, расписание и как записаться.</p>
+          <div class="final-actions">
+            <button class="btn btn-primary btn-lg" type="button" data-open-contact>Записаться на тренировку</button>
+          </div>
+          <div class="final-links">
+            <a href="https://vk.com/huskybasketball" target="_blank" rel="noopener noreferrer">ВКонтакте</a>
+            <a href="https://t.me/basketbolhasku" target="_blank" rel="noopener noreferrer">Telegram</a>
+            <a href="https://yandex.ru/maps/-/CTu0aUkq" target="_blank" rel="noopener noreferrer">Яндекс.Карты</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <div class="footer-brand">
+          <img src="./assets/logos/logo-new.jpg" alt="Логотип Хаски" width="40" height="40" />
+          <div>
+            <strong>Баскетбольный клуб «Хаски»</strong>
+            <span>Детский баскетбол · Ростов-на-Дону</span>
+          </div>
+        </div>
+        <div class="footer-contacts">
+          <a href="tel:+79514967452">+7 951 496 74 52</a>
+          <a href="mailto:bk.husky@mail.ru">bk.husky@mail.ru</a>
+        </div>
+        <div class="footer-socials" aria-label="Социальные сети">
+          <a href="https://vk.com/huskybasketball" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте">
+            <img src="./assets/icons/vk.png" alt="" width="22" height="22" aria-hidden="true" />
+          </a>
+          <a href="https://t.me/basketbolhasku" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+            <img src="./assets/icons/telegram.png" alt="" width="22" height="22" aria-hidden="true" />
+          </a>
+        </div>
+      </div>
+      <p class="footer-copy">© <span id="year">2026</span> Баскетбольный клуб «Хаски». Ростов-на-Дону.</p>
+    </footer>
+
+    <!-- ================= МОДАЛКА КОНТАКТЫ ================= -->
+    <div class="modal" id="contact-modal" aria-hidden="true" hidden>
+      <button class="modal-overlay" type="button" tabindex="-1" data-close-contact aria-label="Закрыть окно контактов"></button>
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+        <button class="modal-close" type="button" data-close-contact aria-label="Закрыть окно">×</button>
+        <span class="sticker-caveat">на связи 🐺</span>
+        <h2 id="modal-title">Записаться на тренировку</h2>
+        <p>Выберите удобный способ — ответим и поможем подобрать группу.</p>
+        <div class="modal-actions">
+          <a class="contact-row" href="tel:+79514967452">
+            <strong>Позвонить</strong><span>+7 951 496 74 52</span>
+          </a>
+          <a class="contact-row" href="https://t.me/basketbolhasku" target="_blank" rel="noopener noreferrer">
+            <strong>Telegram</strong><span>@basketbolhasku</span>
+          </a>
+          <a class="contact-row" href="https://vk.com/huskybasketball" target="_blank" rel="noopener noreferrer">
+            <strong>ВКонтакте</strong><span>vk.com/huskybasketball</span>
+          </a>
+          <a class="contact-row" href="mailto:bk.husky@mail.ru">
+            <strong>Почта</strong><span>bk.husky@mail.ru</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= ЛАЙТБОКС ================= -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" aria-hidden="true" tabindex="-1" hidden>
+      <h2 class="sr-only" id="lightbox-title">Просмотр фотографии клуба</h2>
+      <button class="lightbox-overlay" type="button" tabindex="-1" data-lightbox-close aria-label="Закрыть просмотр"></button>
+      <button class="lightbox-close" type="button" data-lightbox-close aria-label="Закрыть просмотр">×</button>
+      <button class="lightbox-nav lightbox-prev" type="button" data-lightbox-prev aria-label="Предыдущее фото">‹</button>
+      <figure class="lightbox-figure" id="lightbox-figure"></figure>
+      <button class="lightbox-nav lightbox-next" type="button" data-lightbox-next aria-label="Следующее фото">›</button>
+    </div>
+
+    <!-- ================= СКРОЛЛ-АНИМАЦИЯ: МЯЧ → КОЛЬЦО (фикс. справа) ================= -->
+    <div class="court-fx" id="court-fx" aria-hidden="true">
+      <svg class="court-hoop" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="96" y="4" width="92" height="66" rx="8" fill="#ffffff" stroke="#17568f" stroke-width="4"/>
+        <rect x="126" y="26" width="34" height="26" rx="3" fill="none" stroke="#2e86c8" stroke-width="4"/>
+        <path d="M96 72 H164" stroke="#e2732f" stroke-width="7" stroke-linecap="round"/>
+        <ellipse cx="130" cy="74" rx="34" ry="9" fill="none" stroke="#e2732f" stroke-width="5"/>
+        <g class="court-net" stroke="rgba(23,86,143,.5)" stroke-width="2">
+          <path d="M100 76 L110 120"/>
+          <path d="M116 78 L122 122"/>
+          <path d="M130 79 L130 124"/>
+          <path d="M144 78 L138 122"/>
+          <path d="M160 76 L150 120"/>
+          <path d="M106 96 H154"/>
+          <path d="M112 112 H148"/>
+        </g>
+      </svg>
+      <img class="court-ball" id="court-ball" src="./assets/icons/basketball.png" alt="" width="80" height="80" decoding="async" />
+      <span class="court-spark" id="court-spark" aria-hidden="true">🔥</span>
+    </div>
+
+    <script src="./js/main.js" defer></script>
+  </body>
+</html>

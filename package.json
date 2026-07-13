@@ -1,0 +1,13 @@
+{
+  "name": "husky-site",
+  "version": "1.0.0",
+  "description": "Одностраничный лендинг в бумажном / scrapbook / editorial стиле. Чистый стек: **HTML + CSS + JavaScript**, без сборки и зависимостей.",
+  "scripts": {
+    "check": "node --check js/main.js",
+    "test": "node --check js/main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://husky-basketball.ru/sitemap.xml
