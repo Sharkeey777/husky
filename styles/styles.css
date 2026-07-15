@@ -317,7 +317,11 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
 .life-photo:nth-child(3) { grid-row: span 2; transform: rotate(1deg); }
 .life-photo:nth-child(5) { grid-column: span 2; }
 .life-photo:nth-child(2n) { transform: rotate(0.8deg); }
-.life-photo img { width: 100%; height: 100%; border-radius: 8px; object-fit: cover; transition: transform 0.45s ease; }
+.life-photo img {
+  width: 100%; height: 100%; border-radius: 8px;
+  object-fit: contain; background: var(--paper-2);
+  transition: transform 0.45s ease;
+}
 .life-photo:hover { transform: translateY(-5px) rotate(0); box-shadow: var(--shadow-lg); z-index: 3; }
 .life-photo:hover img { transform: scale(1.035); }
 .life-mosaic.is-switching .life-photo { opacity: 0; transform: translateY(10px); }
@@ -497,10 +501,13 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
 .lightbox-close { position: absolute; top: 20px; right: 24px; color: #fff; font-size: 2.4rem; z-index: 4; }
 .lightbox-figure {
   position: relative; z-index: 2; display: grid; place-items: center;
-  width: min(92vw, 1200px); height: 86vh; margin: 0;
+  width: min(86vw, 1200px); height: 84dvh;
+  max-height: calc(100dvh - 40px); margin: 0;
 }
 .lightbox-figure img {
-  width: auto; height: auto; max-width: 100%; max-height: 100%;
+  width: auto; height: auto;
+  max-width: min(86vw, 1200px);
+  max-height: 84dvh;
   object-fit: contain; border-radius: 12px; box-shadow: var(--shadow-lg);
 }
 .lightbox-nav {
