@@ -42,61 +42,34 @@
   };
 
   /* ---------- Реальные фото клуба, разложенные по темам ---------- */
+  const makePhotoSet = (prefix, description) => Array.from({ length: 20 }, (_, index) => {
+    const number = String(index + 1).padStart(2, "0");
+    return {
+      src: `./assets/photos/gallery/${prefix}-${number}.jpg`,
+      alt: `${description}. Фото ${index + 1} из 20`,
+    };
+  });
+
   const PHOTO_CATEGORIES = {
     training: {
       label: "Тренировки",
-      photos: [
-        { src: "./assets/photos/hero-training.jpg", alt: "Два игрока ведут борьбу за мяч на тренировке Хаски", w: 1920, h: 1280 },
-        { src: "./assets/photos/about-action.jpg", alt: "Дети разыгрывают мяч на тренировке Хаски", w: 1600, h: 1067 },
-        { src: "./assets/photos/gallery/training-01.jpg", alt: "Юный игрок готовится к передаче мяча", w: 1600, h: 1067 },
-        { src: "./assets/photos/gallery/training-02.jpg", alt: "Игровое упражнение в солнечном спортивном зале", w: 1600, h: 1067 },
-        { src: "./assets/photos/gallery/training-03.jpg", alt: "Ребята соревнуются за мяч на тренировке", w: 1600, h: 1066 },
-        { src: "./assets/photos/gallery/training-04.jpg", alt: "Команда слушает тренера после упражнения", w: 1067, h: 1600 },
-      ],
+      photos: makePhotoSet("training", "Тренировка баскетбольного клуба Хаски"),
     },
     tournament: {
       label: "Турнир 3×3",
-      photos: [
-        { src: "./assets/photos/gallery/tournament-01.jpg", alt: "Игроки турнира Хаски 3 на 3 перед началом матча", w: 1114, h: 1600 },
-        { src: "./assets/photos/gallery/tournament-02.jpg", alt: "Борьба за мяч на турнире 3 на 3", w: 1600, h: 1065 },
-        { src: "./assets/photos/gallery/tournament-03.jpg", alt: "Бросок по кольцу во время турнира Хаски", w: 1600, h: 1067 },
-        { src: "./assets/photos/gallery/tournament-04.jpg", alt: "Участники турнира 3 на 3 в клубной форме", w: 1600, h: 1067 },
-        { src: "./assets/photos/gallery/tournament-05.jpg", alt: "Награждение участников клубного турнира", w: 1600, h: 1067 },
-        { src: "./assets/photos/gallery/tournament-06.jpg", alt: "Общая фотография участников турнира Хаски", w: 1600, h: 1067 },
-      ],
+      photos: makePhotoSet("tournament", "Турнир Хаски по баскетболу три на три"),
     },
     newyear: {
       label: "Новый год",
-      photos: [
-        { src: "./assets/photos/gallery/new-year-01.jpg", alt: "Новогодний клубный турнир Хаски", w: 1600, h: 1067 },
-        { src: "./assets/photos/gallery/new-year-02.jpg", alt: "Участник новогоднего праздника ведёт мяч", w: 1067, h: 1600 },
-        { src: "./assets/photos/gallery/new-year-03.jpg", alt: "Дед Мороз и команда Хаски на площадке", w: 1600, h: 1067 },
-        { src: "./assets/photos/gallery/new-year-04.jpg", alt: "Ребята получают подарки на клубном празднике", w: 1600, h: 1067 },
-        { src: "./assets/photos/gallery/new-year-05.jpg", alt: "Кубки и медали новогоднего турнира", w: 1600, h: 1067 },
-        { src: "./assets/photos/gallery/new-year-06.jpg", alt: "Общая фотография новогоднего события Хаски", w: 1600, h: 900 },
-      ],
+      photos: makePhotoSet("new-year", "Новогоднее мероприятие баскетбольного клуба Хаски"),
     },
     camp: {
       label: "Летний лагерь",
-      photos: [
-        { src: "./assets/photos/gallery/camp-01.jpg", alt: "Тренировка Хаски на открытой площадке в летнем лагере", w: 1200, h: 1600 },
-        { src: "./assets/photos/gallery/camp-02.jpg", alt: "Команда Хаски на берегу моря", w: 1200, h: 1600 },
-        { src: "./assets/photos/gallery/camp-03.jpg", alt: "Ребята из лагеря на водном аттракционе", w: 1200, h: 1600 },
-        { src: "./assets/photos/gallery/camp-04.jpg", alt: "Морская прогулка команды в летнем лагере", w: 1200, h: 1600 },
-        { src: "./assets/photos/gallery/camp-05.jpg", alt: "Общая фотография команды Хаски в лагере", w: 1200, h: 1600 },
-        { src: "./assets/photos/gallery/camp-06.jpg", alt: "Вечерний праздник с фонтанами в лагере", w: 1600, h: 1200 },
-      ],
+      photos: makePhotoSet("camp", "Жизнь команды Хаски в летнем лагере"),
     },
     portraits: {
       label: "Фотосессия",
-      photos: [
-        { src: "./assets/photos/gallery/portrait-01.jpg", alt: "Игрок Хаски в клубной форме с мячом", w: 1067, h: 1600 },
-        { src: "./assets/photos/gallery/portrait-02.jpg", alt: "Юный баскетболист Хаски с двумя мячами", w: 1067, h: 1600 },
-        { src: "./assets/photos/gallery/portrait-03.jpg", alt: "Игрок Хаски ведёт мяч во время фотосессии", w: 1067, h: 1600 },
-        { src: "./assets/photos/gallery/portrait-04.jpg", alt: "Портрет баскетболиста в форме Хаски", w: 1067, h: 1600 },
-        { src: "./assets/photos/gallery/portrait-05.jpg", alt: "Спортивный портрет игрока команды Хаски", w: 1067, h: 1600 },
-        { src: "./assets/photos/gallery/portrait-06.jpg", alt: "Команда Хаски на общей клубной фотосессии", w: 1600, h: 1067 },
-      ],
+      photos: makePhotoSet("portrait", "Игрок баскетбольного клуба Хаски на фотосессии"),
     },
   };
 
@@ -230,8 +203,6 @@
       const img = document.createElement("img");
       img.src = photo.src;
       img.alt = photo.alt;
-      img.width = photo.w;
-      img.height = photo.h;
       img.loading = "lazy";
       img.decoding = "async";
       item.appendChild(img);
@@ -285,8 +256,8 @@
     const p = activePhotos[current];
     lightboxImg.src = p.src;
     lightboxImg.alt = p.alt;
-    lightboxImg.width = p.w;
-    lightboxImg.height = p.h;
+    lightboxImg.removeAttribute("width");
+    lightboxImg.removeAttribute("height");
     lightbox.hidden = false;
     lightbox.setAttribute("aria-hidden", "false");
     document.body.classList.add("is-locked");
@@ -307,8 +278,8 @@
     const p = activePhotos[current];
     lightboxImg.src = p.src;
     lightboxImg.alt = p.alt;
-    lightboxImg.width = p.w;
-    lightboxImg.height = p.h;
+    lightboxImg.removeAttribute("width");
+    lightboxImg.removeAttribute("height");
   }
   if (lightbox) {
     lightbox.querySelectorAll("[data-lightbox-close]").forEach((b) => b.addEventListener("click", closeLightbox));
@@ -348,7 +319,7 @@
   const campImage = document.getElementById("camp-image");
   const campCount = document.getElementById("camp-count");
   const campDots = document.getElementById("camp-dots");
-  const campPhotos = PHOTO_CATEGORIES.camp.photos;
+  const campPhotos = PHOTO_CATEGORIES.camp.photos.slice(0, 6);
   let campIndex = 0;
   let campTimer = null;
   let campAutoSteps = campPhotos.length * 2;
@@ -362,8 +333,8 @@
     const applyPhoto = () => {
       campImage.src = photo.src;
       campImage.alt = photo.alt;
-      campImage.width = photo.w;
-      campImage.height = photo.h;
+      campImage.removeAttribute("width");
+      campImage.removeAttribute("height");
       campCount.textContent = `${String(campIndex + 1).padStart(2, "0")} / ${String(campPhotos.length).padStart(2, "0")}`;
       campDots?.querySelectorAll(".camp-dot").forEach((dot, index) => {
         const active = index === campIndex;

@@ -25,9 +25,10 @@ husky-site/
 ├─ styles/styles.css   # стили: палитра, скрапбук-компоненты, адаптив, анимации
 ├─ js/main.js          # reveal при скролле, галерея-мозаика, лайтбокс, меню, модалка
 ├─ assets/
-│  ├─ logos/           # логотип (svg + jpg)
+│  ├─ branding/        # логотип студии-разработчика
 │  ├─ icons/           # VK, Telegram
-│  ├─ gallery/         # фото: team / training / events
+│  ├─ photos/gallery/  # 5 фотокатегорий по 20 оптимизированных кадров
+│  ├─ partners/        # материалы партнёра Welcome Home
 │  └─ ui/og-cover.jpg  # картинка для соцсетей (Open Graph)
 ├─ robots.txt
 ├─ sitemap.xml
