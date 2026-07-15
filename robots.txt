@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://husky-basketball.ru/sitemap.xml
+Sitemap: https://sharkeey777.github.io/husky/sitemap.xml

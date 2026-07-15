@@ -5,6 +5,7 @@
 (() => {
   "use strict";
 
+  document.documentElement.classList.add("js");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const focusableSelector = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
@@ -40,20 +41,64 @@
     }
   };
 
-  /* ---------- Реальные фото галереи (из папок клуба) ---------- */
-  const GALLERY = [
-    { src: "./assets/gallery/team/team-02.jpg", alt: "Юная спортсменка клуба Хаски с мячом", w: 933, h: 1400 },
-    { src: "./assets/gallery/training/training-01.jpg", alt: "Тренировка Хаски в зале", w: 1320, h: 880 },
-    { src: "./assets/gallery/team/team-03.jpg", alt: "Игрок команды Хаски", w: 933, h: 1400 },
-    { src: "./assets/gallery/events/event-01.jpg", alt: "Клубное событие Хаски", w: 1320, h: 880 },
-    { src: "./assets/gallery/training/training-02.jpg", alt: "Игрок Хаски на тренировке с мячом", w: 933, h: 1400 },
-    { src: "./assets/gallery/events/event-04.jpg", alt: "Команда Хаски на мероприятии", w: 1600, h: 1067 },
-    { src: "./assets/gallery/team/team-04.jpg", alt: "Игроки команды Хаски", w: 933, h: 1400 },
-    { src: "./assets/gallery/training/training-04.jpg", alt: "Светлый спортивный зал Хаски", w: 1450, h: 967 },
-    { src: "./assets/gallery/events/event-02.jpg", alt: "Летние активности команды Хаски", w: 853, h: 1280 },
-    { src: "./assets/gallery/training/training-03.jpg", alt: "Момент тренировки Хаски", w: 933, h: 1400 },
-    { src: "./assets/gallery/events/event-03.jpg", alt: "Клубная энергия Хаски", w: 933, h: 1400 },
-  ];
+  /* ---------- Реальные фото клуба, разложенные по темам ---------- */
+  const PHOTO_CATEGORIES = {
+    training: {
+      label: "Тренировки",
+      photos: [
+        { src: "./assets/photos/hero-training.jpg", alt: "Два игрока ведут борьбу за мяч на тренировке Хаски", w: 1920, h: 1280 },
+        { src: "./assets/photos/about-action.jpg", alt: "Дети разыгрывают мяч на тренировке Хаски", w: 1600, h: 1067 },
+        { src: "./assets/photos/gallery/training-01.jpg", alt: "Юный игрок готовится к передаче мяча", w: 1600, h: 1067 },
+        { src: "./assets/photos/gallery/training-02.jpg", alt: "Игровое упражнение в солнечном спортивном зале", w: 1600, h: 1067 },
+        { src: "./assets/photos/gallery/training-03.jpg", alt: "Ребята соревнуются за мяч на тренировке", w: 1600, h: 1066 },
+        { src: "./assets/photos/gallery/training-04.jpg", alt: "Команда слушает тренера после упражнения", w: 1067, h: 1600 },
+      ],
+    },
+    tournament: {
+      label: "Турнир 3×3",
+      photos: [
+        { src: "./assets/photos/gallery/tournament-01.jpg", alt: "Игроки турнира Хаски 3 на 3 перед началом матча", w: 1114, h: 1600 },
+        { src: "./assets/photos/gallery/tournament-02.jpg", alt: "Борьба за мяч на турнире 3 на 3", w: 1600, h: 1065 },
+        { src: "./assets/photos/gallery/tournament-03.jpg", alt: "Бросок по кольцу во время турнира Хаски", w: 1600, h: 1067 },
+        { src: "./assets/photos/gallery/tournament-04.jpg", alt: "Участники турнира 3 на 3 в клубной форме", w: 1600, h: 1067 },
+        { src: "./assets/photos/gallery/tournament-05.jpg", alt: "Награждение участников клубного турнира", w: 1600, h: 1067 },
+        { src: "./assets/photos/gallery/tournament-06.jpg", alt: "Общая фотография участников турнира Хаски", w: 1600, h: 1067 },
+      ],
+    },
+    newyear: {
+      label: "Новый год",
+      photos: [
+        { src: "./assets/photos/gallery/new-year-01.jpg", alt: "Новогодний клубный турнир Хаски", w: 1600, h: 1067 },
+        { src: "./assets/photos/gallery/new-year-02.jpg", alt: "Участник новогоднего праздника ведёт мяч", w: 1067, h: 1600 },
+        { src: "./assets/photos/gallery/new-year-03.jpg", alt: "Дед Мороз и команда Хаски на площадке", w: 1600, h: 1067 },
+        { src: "./assets/photos/gallery/new-year-04.jpg", alt: "Ребята получают подарки на клубном празднике", w: 1600, h: 1067 },
+        { src: "./assets/photos/gallery/new-year-05.jpg", alt: "Кубки и медали новогоднего турнира", w: 1600, h: 1067 },
+        { src: "./assets/photos/gallery/new-year-06.jpg", alt: "Общая фотография новогоднего события Хаски", w: 1600, h: 900 },
+      ],
+    },
+    camp: {
+      label: "Летний лагерь",
+      photos: [
+        { src: "./assets/photos/gallery/camp-01.jpg", alt: "Тренировка Хаски на открытой площадке в летнем лагере", w: 1200, h: 1600 },
+        { src: "./assets/photos/gallery/camp-02.jpg", alt: "Команда Хаски на берегу моря", w: 1200, h: 1600 },
+        { src: "./assets/photos/gallery/camp-03.jpg", alt: "Ребята из лагеря на водном аттракционе", w: 1200, h: 1600 },
+        { src: "./assets/photos/gallery/camp-04.jpg", alt: "Морская прогулка команды в летнем лагере", w: 1200, h: 1600 },
+        { src: "./assets/photos/gallery/camp-05.jpg", alt: "Общая фотография команды Хаски в лагере", w: 1200, h: 1600 },
+        { src: "./assets/photos/gallery/camp-06.jpg", alt: "Вечерний праздник с фонтанами в лагере", w: 1600, h: 1200 },
+      ],
+    },
+    portraits: {
+      label: "Фотосессия",
+      photos: [
+        { src: "./assets/photos/gallery/portrait-01.jpg", alt: "Игрок Хаски в клубной форме с мячом", w: 1067, h: 1600 },
+        { src: "./assets/photos/gallery/portrait-02.jpg", alt: "Юный баскетболист Хаски с двумя мячами", w: 1067, h: 1600 },
+        { src: "./assets/photos/gallery/portrait-03.jpg", alt: "Игрок Хаски ведёт мяч во время фотосессии", w: 1067, h: 1600 },
+        { src: "./assets/photos/gallery/portrait-04.jpg", alt: "Портрет баскетболиста в форме Хаски", w: 1067, h: 1600 },
+        { src: "./assets/photos/gallery/portrait-05.jpg", alt: "Спортивный портрет игрока команды Хаски", w: 1067, h: 1600 },
+        { src: "./assets/photos/gallery/portrait-06.jpg", alt: "Команда Хаски на общей клубной фотосессии", w: 1600, h: 1067 },
+      ],
+    },
+  };
 
   /* ---------- Год в подвале ---------- */
   const yearEl = document.getElementById("year");
@@ -153,8 +198,9 @@
     });
   }
 
-  /* ---------- Галерея (масонри) + лайтбокс ---------- */
-  const grid = document.getElementById("gallery-grid");
+  /* ---------- Тематическая фотогалерея + лайтбокс ---------- */
+  const lifeMosaic = document.getElementById("life-mosaic");
+  const galleryTabs = Array.from(document.querySelectorAll("[data-gallery-category]"));
   const lightbox = document.getElementById("lightbox");
   const lightboxFigure = document.getElementById("lightbox-figure");
   let lightboxImg = null;
@@ -165,35 +211,21 @@
     lightboxFigure.appendChild(lightboxImg);
   }
   let current = 0;
+  let activePhotos = PHOTO_CATEGORIES.training.photos;
 
-  const ROW = 8; // px, соответствует grid-auto-rows
-  const GAP = 20;
-  const PAD = 9; // .gallery-item padding
-  const CAPTION = 0;
+  const renderGallery = (categoryKey, animate = true) => {
+    const category = PHOTO_CATEGORIES[categoryKey];
+    if (!category || !lifeMosaic) return;
 
-  // Высота считается детерминированно из соотношения сторон и ширины колонки,
-  // поэтому не зависит от момента загрузки изображений.
-  const setSpan = (item) => {
-    const ar = parseFloat(item.dataset.ar || "0"); // height / width
-    if (!ar) return;
-    const contentW = item.clientWidth - PAD * 2;
-    if (contentW <= 0) return;
-    const itemH = contentW * ar + PAD * 2 + CAPTION;
-    const span = Math.max(1, Math.ceil((itemH + GAP) / (ROW + GAP)));
-    item.style.setProperty("--span", String(span));
-  };
+    const update = () => {
+      activePhotos = category.photos;
+      lifeMosaic.replaceChildren();
+      lifeMosaic.setAttribute("aria-label", `Фотографии: ${category.label}`);
 
-  const relayout = () => {
-    if (!grid) return;
-    grid.querySelectorAll(".gallery-item").forEach(setSpan);
-  };
-
-  if (grid) {
-    GALLERY.forEach((photo, i) => {
+      category.photos.forEach((photo, index) => {
       const item = document.createElement("button");
       item.type = "button";
-      item.className = "gallery-item reveal";
-      item.dataset.ar = String(photo.h / photo.w);
+        item.className = "life-photo";
       item.setAttribute("aria-label", `Открыть фото: ${photo.alt}`);
       const img = document.createElement("img");
       img.src = photo.src;
@@ -203,36 +235,54 @@
       img.loading = "lazy";
       img.decoding = "async";
       item.appendChild(img);
-      item.addEventListener("click", () => openLightbox(i));
-      grid.appendChild(item);
+        item.addEventListener("click", () => openLightbox(index));
+        lifeMosaic.appendChild(item);
+      });
 
-      item.classList.add("is-visible");
+      requestAnimationFrame(() => lifeMosaic.classList.remove("is-switching"));
+    };
 
+    if (animate && !reduceMotion) {
+      lifeMosaic.classList.add("is-switching");
+      window.setTimeout(update, 160);
+    } else {
+      update();
+    }
+  };
+
+  if (lifeMosaic) renderGallery("training", false);
+
+  galleryTabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => {
+      const categoryKey = tab.dataset.galleryCategory;
+      galleryTabs.forEach((button) => {
+        const selected = button === tab;
+        button.classList.toggle("is-active", selected);
+        button.setAttribute("aria-selected", String(selected));
+        button.tabIndex = selected ? 0 : -1;
+      });
+      renderGallery(categoryKey, true);
     });
 
-    // Первый расчёт мозаики — как только применён layout.
-    requestAnimationFrame(relayout);
-
-    if ("ResizeObserver" in window) {
-      let lastGridWidth = 0;
-      const resizeObserver = new ResizeObserver(([entry]) => {
-        const width = Math.round(entry.contentRect.width);
-        if (width === lastGridWidth) return;
-        lastGridWidth = width;
-        requestAnimationFrame(relayout);
-      });
-      resizeObserver.observe(grid);
-    }
-    window.addEventListener("load", relayout);
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(relayout);
-  }
+    tab.addEventListener("keydown", (event) => {
+      if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+      event.preventDefault();
+      let nextIndex = index;
+      if (event.key === "ArrowLeft") nextIndex = (index - 1 + galleryTabs.length) % galleryTabs.length;
+      if (event.key === "ArrowRight") nextIndex = (index + 1) % galleryTabs.length;
+      if (event.key === "Home") nextIndex = 0;
+      if (event.key === "End") nextIndex = galleryTabs.length - 1;
+      galleryTabs[nextIndex].focus();
+      galleryTabs[nextIndex].click();
+    });
+  });
 
   /* ---------- Лайтбокс ---------- */
   function openLightbox(index) {
     if (!lightbox || !lightboxImg) return;
     current = index;
     lightboxOpener = document.activeElement;
-    const p = GALLERY[current];
+    const p = activePhotos[current];
     lightboxImg.src = p.src;
     lightboxImg.alt = p.alt;
     lightboxImg.width = p.w;
@@ -253,8 +303,8 @@
     if (lightboxOpener && lightboxOpener.focus) lightboxOpener.focus();
   }
   function step(dir) {
-    current = (current + dir + GALLERY.length) % GALLERY.length;
-    const p = GALLERY[current];
+    current = (current + dir + activePhotos.length) % activePhotos.length;
+    const p = activePhotos[current];
     lightboxImg.src = p.src;
     lightboxImg.alt = p.alt;
     lightboxImg.width = p.w;
@@ -275,6 +325,115 @@
       if (e.key === "ArrowLeft") step(-1);
       if (e.key === "ArrowRight") step(1);
       trapFocus(e, lightbox);
+    });
+  }
+
+  /* ---------- Мероприятия: линия и карточки появляются при прокрутке ---------- */
+  const eventsTimeline = document.getElementById("events-timeline");
+  if (eventsTimeline) {
+    if (reduceMotion || !("IntersectionObserver" in window)) {
+      eventsTimeline.classList.add("is-visible");
+    } else {
+      const eventsObserver = new IntersectionObserver(([entry], observer) => {
+        if (!entry.isIntersecting) return;
+        eventsTimeline.classList.add("is-visible");
+        observer.disconnect();
+      }, { rootMargin: "0px 0px -14%", threshold: 0.14 });
+      eventsObserver.observe(eventsTimeline);
+    }
+  }
+
+  /* ---------- Лагерь: лёгкая карусель, активна только когда видна ---------- */
+  const campGallery = document.getElementById("camp-gallery");
+  const campImage = document.getElementById("camp-image");
+  const campCount = document.getElementById("camp-count");
+  const campDots = document.getElementById("camp-dots");
+  const campPhotos = PHOTO_CATEGORIES.camp.photos;
+  let campIndex = 0;
+  let campTimer = null;
+  let campAutoSteps = campPhotos.length * 2;
+  let campVisible = false;
+  let campPaused = false;
+
+  const updateCamp = (nextIndex, animate = true) => {
+    if (!campGallery || !campImage || !campCount) return;
+    campIndex = (nextIndex + campPhotos.length) % campPhotos.length;
+    const photo = campPhotos[campIndex];
+    const applyPhoto = () => {
+      campImage.src = photo.src;
+      campImage.alt = photo.alt;
+      campImage.width = photo.w;
+      campImage.height = photo.h;
+      campCount.textContent = `${String(campIndex + 1).padStart(2, "0")} / ${String(campPhotos.length).padStart(2, "0")}`;
+      campDots?.querySelectorAll(".camp-dot").forEach((dot, index) => {
+        const active = index === campIndex;
+        dot.classList.toggle("is-active", active);
+        dot.setAttribute("aria-current", active ? "true" : "false");
+      });
+      requestAnimationFrame(() => campGallery.classList.remove("is-switching"));
+    };
+
+    if (animate && !reduceMotion) {
+      campGallery.classList.add("is-switching");
+      window.setTimeout(applyPhoto, 180);
+    } else {
+      applyPhoto();
+    }
+  };
+
+  const stopCampAuto = () => {
+    if (!campTimer) return;
+    window.clearInterval(campTimer);
+    campTimer = null;
+  };
+
+  const startCampAuto = () => {
+    if (reduceMotion || !campVisible || campPaused || campTimer || campAutoSteps <= 0) return;
+    campTimer = window.setInterval(() => {
+      if (document.hidden || campPaused || !campVisible) return;
+      updateCamp(campIndex + 1, true);
+      campAutoSteps -= 1;
+      if (campAutoSteps <= 0) stopCampAuto();
+    }, 4500);
+  };
+
+  if (campGallery && campDots) {
+    campPhotos.forEach((photo, index) => {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = `camp-dot${index === 0 ? " is-active" : ""}`;
+      dot.setAttribute("aria-label", `Показать фото ${index + 1}: ${photo.alt}`);
+      dot.setAttribute("aria-current", index === 0 ? "true" : "false");
+      dot.addEventListener("click", () => updateCamp(index, true));
+      campDots.appendChild(dot);
+    });
+
+    campGallery.querySelector("[data-camp-prev]")?.addEventListener("click", () => updateCamp(campIndex - 1, true));
+    campGallery.querySelector("[data-camp-next]")?.addEventListener("click", () => updateCamp(campIndex + 1, true));
+    campGallery.addEventListener("pointerenter", () => { campPaused = true; stopCampAuto(); });
+    campGallery.addEventListener("pointerleave", () => { campPaused = false; startCampAuto(); });
+    campGallery.addEventListener("focusin", () => { campPaused = true; stopCampAuto(); });
+    campGallery.addEventListener("focusout", (event) => {
+      if (campGallery.contains(event.relatedTarget)) return;
+      campPaused = false;
+      startCampAuto();
+    });
+
+    if ("IntersectionObserver" in window) {
+      const campObserver = new IntersectionObserver(([entry]) => {
+        campVisible = entry.isIntersecting;
+        if (campVisible) startCampAuto();
+        else stopCampAuto();
+      }, { threshold: 0.35 });
+      campObserver.observe(campGallery);
+    } else {
+      campVisible = true;
+      startCampAuto();
+    }
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) stopCampAuto();
+      else startCampAuto();
     });
   }
 

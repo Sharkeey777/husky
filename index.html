@@ -10,9 +10,7 @@
       content="Баскетбольный клуб «Хаски» в Ростове-на-Дону: тренировки для детей и подростков, турниры, праздники, поездки и летний лагерь. Живая команда и сильная спортивная атмосфера."
     />
     <meta name="theme-color" content="#102f4d" />
-    <!-- TODO перед деплоем: замените домен-плейсхолдер husky-basketball.ru на реальный.
-         Проще всего скриптом:  ./set-domain.sh https://ваш-домен.ru   (см. README) -->
-    <link rel="canonical" href="https://husky-basketball.ru/" />
+    <link rel="canonical" href="https://sharkeey777.github.io/husky/" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -23,21 +21,21 @@
       content="Тренировки, команда, турниры, праздники и летний лагерь. Клуб «Хаски» — там, где ребёнок растёт в игре и характере."
     />
     <meta property="og:locale" content="ru_RU" />
-    <meta property="og:image" content="https://husky-basketball.ru/assets/ui/og-cover.jpg" />
-    <meta property="og:image:width" content="1360" />
-    <meta property="og:image:height" content="764" />
+    <meta property="og:image" content="https://sharkeey777.github.io/husky/assets/ui/og-cover.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Баскетбольный клуб «Хаски»" />
-    <meta property="og:url" content="https://husky-basketball.ru/" />
+    <meta property="og:url" content="https://sharkeey777.github.io/husky/" />
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Баскетбольный клуб «Хаски»" />
     <meta name="twitter:description" content="Детский баскетбол в Ростове-на-Дону: тренировки, турниры, праздники и летний лагерь." />
-    <meta name="twitter:image" content="https://husky-basketball.ru/assets/ui/og-cover.jpg" />
+    <meta name="twitter:image" content="https://sharkeey777.github.io/husky/assets/ui/og-cover.jpg" />
 
     <link rel="icon" type="image/jpeg" href="./assets/logos/logo-new.jpg" />
     <link rel="apple-touch-icon" href="./assets/logos/logo-new.jpg" />
-    <link rel="preload" href="./assets/gallery/training/training-01.jpg" as="image" fetchpriority="high" />
+    <link rel="preload" href="./assets/photos/hero-training.jpg" as="image" fetchpriority="high" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -57,8 +55,8 @@
         "name": "Баскетбольный клуб «Хаски»",
         "sport": "Basketball",
         "description": "Детско-юношеский баскетбольный клуб в Ростове-на-Дону: тренировки, турниры, праздники, поездки и летний лагерь.",
-        "url": "https://husky-basketball.ru/",
-        "logo": "https://husky-basketball.ru/assets/logos/logo-main.svg",
+        "url": "https://sharkeey777.github.io/husky/",
+        "logo": "https://sharkeey777.github.io/husky/assets/logos/logo-main.svg",
         "telephone": "+7-951-496-74-52",
         "email": "bk.husky@mail.ru",
         "areaServed": "Ростов-на-Дону",
@@ -123,7 +121,7 @@
       <!-- ================= HERO ================= -->
       <section class="hero" id="hero">
         <div class="hero-bg" aria-hidden="true">
-          <img src="./assets/gallery/training/training-01.jpg" alt="" width="1320" height="880" fetchpriority="high" decoding="async" />
+          <img src="./assets/photos/hero-training.jpg" alt="" width="1920" height="1280" fetchpriority="high" decoding="async" />
           <span class="hero-scrim"></span>
         </div>
 
@@ -174,11 +172,19 @@
                 <p><b>Играем турниры</b> и проводим клубные мероприятия.</p>
               </div>
             </div>
-            <figure class="about-photo photo-card reveal reveal-delay">
-              <span class="tape tape-top" aria-hidden="true"></span>
-              <img src="./assets/gallery/training/training-04.jpg" alt="Светлый спортивный зал и тренировка Хаски" width="1450" height="967" loading="lazy" />
-              <figcaption class="sticker-caveat">на тренировке</figcaption>
-            </figure>
+            <div class="about-collage reveal reveal-delay" aria-label="Фотографии с тренировки клуба">
+              <figure class="photo-card about-main">
+                <span class="tape tape-top" aria-hidden="true"></span>
+                <img src="./assets/photos/about-action.jpg" alt="Дети играют в баскетбол на тренировке Хаски" width="1600" height="1067" loading="lazy" />
+                <figcaption class="sticker-caveat">в игре</figcaption>
+              </figure>
+              <figure class="photo-card about-coach">
+                <img src="./assets/photos/about-coach.jpg" alt="Тренер объясняет упражнение с мячом" width="1600" height="1067" loading="lazy" />
+              </figure>
+              <figure class="photo-card about-hoop">
+                <img src="./assets/photos/about-hoop.jpg" alt="Баскетбольный мяч попадает в кольцо" width="1600" height="1067" loading="lazy" />
+              </figure>
+            </div>
           </div>
         </div>
       </section>
@@ -193,32 +199,32 @@
 
           <div class="why-grid">
             <article class="note-card reveal">
-              <span class="note-emoji" aria-hidden="true">🏀</span>
+              <span class="note-number" aria-hidden="true">01</span>
               <h3>Тренировки и развитие</h3>
               <p>Регулярные занятия: работа с мячом, техника, движение и понимание игры.</p>
             </article>
             <article class="note-card reveal">
-              <span class="note-emoji" aria-hidden="true">🤝</span>
+              <span class="note-number" aria-hidden="true">02</span>
               <h3>Командная атмосфера</h3>
               <p>Ребёнок чувствует поддержку команды и учится играть друг для друга.</p>
             </article>
             <article class="note-card reveal">
-              <span class="note-emoji" aria-hidden="true">🏆</span>
+              <span class="note-number" aria-hidden="true">03</span>
               <h3>Турниры и игры</h3>
               <p>Игровые форматы дают настоящий соревновательный опыт и уверенность.</p>
             </article>
             <article class="note-card reveal">
-              <span class="note-emoji" aria-hidden="true">🎉</span>
+              <span class="note-number" aria-hidden="true">04</span>
               <h3>Праздники и события</h3>
               <p>Клубная жизнь не только в зале: тёплые праздники и общие традиции.</p>
             </article>
             <article class="note-card reveal">
-              <span class="note-emoji" aria-hidden="true">⛺</span>
+              <span class="note-number" aria-hidden="true">05</span>
               <h3>Поездки и лагерь</h3>
               <p>Летний лагерь и выезды — новый масштаб, дружба и заряд на сезон.</p>
             </article>
             <article class="note-card reveal">
-              <span class="note-emoji" aria-hidden="true">📸</span>
+              <span class="note-number" aria-hidden="true">06</span>
               <h3>Открытость клуба</h3>
               <p>Мы показываем жизнь команды в фото и соцсетях — всё честно и по-настоящему.</p>
             </article>
@@ -227,7 +233,7 @@
       </section>
 
       <!-- ================= ЖИЗНЬ КЛУБА (категории) ================= -->
-      <section class="section life" id="life">
+      <section class="section life" id="gallery">
         <div class="wrap">
           <div class="section-head reveal">
             <span class="kicker">Как проходит жизнь клуба</span>
@@ -235,36 +241,16 @@
             <p class="lead">Тренировки, игры, праздники и поездки — из этого складывается наш год.</p>
           </div>
 
-          <ul class="life-chips reveal" aria-label="Направления клубной жизни">
-            <li>Тренировки</li>
-            <li>Турниры</li>
-            <li>8 Марта</li>
-            <li>23 Февраля</li>
-            <li>Новый год</li>
-            <li>Летний лагерь</li>
-            <li>Поездки</li>
-            <li>Награждения</li>
-          </ul>
-
-          <div class="life-mosaic">
-            <figure class="photo-card m1 reveal"><span class="tape tape-corner" aria-hidden="true"></span><img src="./assets/gallery/training/training-02.jpg" alt="Игрок Хаски на тренировке" width="933" height="1400" loading="lazy" /></figure>
-            <figure class="photo-card m2 reveal"><span class="tape tape-top" aria-hidden="true"></span><img src="./assets/gallery/events/event-01.jpg" alt="Клубное событие Хаски" width="1320" height="880" loading="lazy" /></figure>
-            <figure class="photo-card m3 reveal"><span class="tape tape-corner" aria-hidden="true"></span><img src="./assets/gallery/team/team-03.jpg" alt="Игрок команды Хаски" width="933" height="1400" loading="lazy" /></figure>
-            <figure class="photo-card m4 reveal"><span class="tape tape-top" aria-hidden="true"></span><img src="./assets/gallery/events/event-04.jpg" alt="Команда Хаски на мероприятии" width="1600" height="1067" loading="lazy" /></figure>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================= ГАЛЕРЕЯ ================= -->
-      <section class="section gallery" id="gallery">
-        <div class="wrap">
-          <div class="section-head reveal">
-            <h2>Фотоальбом команды</h2>
-            <p class="lead">Живые кадры клуба. Нажми на фото, чтобы рассмотреть поближе.</p>
+          <div class="life-tabs reveal" role="tablist" aria-label="Фото по темам">
+            <button class="life-tab is-active" type="button" role="tab" aria-selected="true" data-gallery-category="training">Тренировки</button>
+            <button class="life-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-gallery-category="tournament">Турнир 3×3</button>
+            <button class="life-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-gallery-category="newyear">Новый год</button>
+            <button class="life-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-gallery-category="camp">Летний лагерь</button>
+            <button class="life-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-gallery-category="portraits">Фотосессия</button>
           </div>
 
-          <div class="gallery-grid" id="gallery-grid">
-            <!-- Наполняется из JS (data-* ниже — источник) -->
+          <div class="life-mosaic" id="life-mosaic" role="tabpanel" aria-live="polite" aria-label="Фотографии: Тренировки">
+            <!-- Наполняется из JS реальными фотографиями выбранной категории -->
           </div>
         </div>
       </section>
@@ -278,29 +264,29 @@
             <p class="lead">Праздники, турниры и выезды, которые делают команду ближе.</p>
           </div>
 
-          <div class="timeline">
-            <article class="event-note reveal">
-              <span class="event-badge">🎄</span>
+          <div class="timeline" id="events-timeline">
+            <article class="event-note">
+              <span class="event-badge" aria-hidden="true">01</span>
               <h3>Новый год вместе</h3>
               <p>Тёплый клубный праздник в конце года — командой и с семьями.</p>
             </article>
-            <article class="event-note reveal">
-              <span class="event-badge">🌷</span>
+            <article class="event-note">
+              <span class="event-badge" aria-hidden="true">02</span>
               <h3>8 Марта и 23 Февраля</h3>
               <p>Поздравляем своих: девчонок и мальчишек команды в их праздники.</p>
             </article>
-            <article class="event-note reveal">
-              <span class="event-badge">🏀</span>
+            <article class="event-note">
+              <span class="event-badge" aria-hidden="true">03</span>
               <h3>Клубные турниры</h3>
               <p>Матчи и игровые форматы, где проявляется характер и растёт мастерство.</p>
             </article>
-            <article class="event-note reveal">
-              <span class="event-badge">⛺</span>
+            <article class="event-note">
+              <span class="event-badge" aria-hidden="true">04</span>
               <h3>Летние поездки в лагерь</h3>
               <p>Каждое лето — тренировки, игры, команда и настоящий отдых.</p>
             </article>
-            <article class="event-note reveal">
-              <span class="event-badge">🥇</span>
+            <article class="event-note">
+              <span class="event-badge" aria-hidden="true">05</span>
               <h3>Награждения</h3>
               <p>Отмечаем успехи ребят и радуемся достижениям всей командой.</p>
             </article>
@@ -311,12 +297,19 @@
       <!-- ================= ЛЕТНИЙ ЛАГЕРЬ ================= -->
       <section class="section camp" id="camp">
         <div class="wrap camp-grid">
-          <div class="camp-photos reveal">
-            <figure class="photo-card camp-a"><span class="tape tape-top" aria-hidden="true"></span><img src="./assets/gallery/events/event-02.jpg" alt="Летние клубные активности Хаски" width="853" height="1280" loading="lazy" /></figure>
-            <figure class="photo-card camp-b"><span class="tape tape-corner" aria-hidden="true"></span><img src="./assets/gallery/events/event-03.jpg" alt="Команда Хаски летом" width="933" height="1400" loading="lazy" /></figure>
+          <div class="camp-gallery reveal" id="camp-gallery" aria-roledescription="карусель" aria-label="Фотографии летнего лагеря">
+            <div class="camp-frame">
+              <img id="camp-image" src="./assets/photos/gallery/camp-01.jpg" alt="Тренировка Хаски на открытой площадке в летнем лагере" width="1200" height="1600" loading="lazy" />
+              <span class="camp-count" id="camp-count">01 / 06</span>
+            </div>
+            <div class="camp-controls">
+              <button class="camp-arrow" type="button" data-camp-prev aria-label="Предыдущее фото лагеря">‹</button>
+              <div class="camp-dots" id="camp-dots" role="group" aria-label="Выбор фотографии"></div>
+              <button class="camp-arrow" type="button" data-camp-next aria-label="Следующее фото лагеря">›</button>
+            </div>
           </div>
           <div class="camp-copy reveal reveal-delay">
-            <span class="sticker-caveat">каждое лето ☀️</span>
+            <span class="sticker-caveat">каждое лето</span>
             <h2>Летний лагерь «Хаски»</h2>
             <p class="lead">
               Каждое лето клуб выезжает в лагерь: тренировки, игры, команда и отдых.
@@ -327,6 +320,23 @@
             </div>
             <button class="btn btn-primary" type="button" data-open-contact>Узнать про лагерь</button>
           </div>
+        </div>
+      </section>
+
+      <!-- ================= ПАРТНЁР ================= -->
+      <section class="section partner" id="partner">
+        <div class="wrap">
+          <a class="partner-card reveal" href="https://welcomeh.ru/" target="_blank" rel="noopener noreferrer" aria-label="Сайт партнёра Welcome Home">
+            <div class="partner-photo">
+              <img src="./assets/partners/welcome-home-event.jpg" alt="Участники турнира 3×3 Хаски при поддержке Welcome Home" width="1600" height="1357" loading="lazy" />
+            </div>
+            <div class="partner-copy">
+              <span class="partner-label">При поддержке</span>
+              <img class="partner-logo" src="./assets/partners/welcome-home.png" alt="Welcome Home — качество выше цены" width="500" height="500" loading="lazy" />
+              <p>Партнёр клубных турниров и ярких спортивных событий «Хаски».</p>
+              <span class="partner-link-text">Перейти на сайт партнёра</span>
+            </div>
+          </a>
         </div>
       </section>
 
@@ -422,6 +432,10 @@
           </a>
         </div>
       </div>
+      <div class="wrap footer-madeby">
+        <span>Сайт создан</span>
+        <img src="./assets/branding/studio-dalee.png" alt="Студия Далее" width="882" height="440" loading="lazy" />
+      </div>
       <p class="footer-copy">© <span id="year">2026</span> Баскетбольный клуб «Хаски». Ростов-на-Дону.</p>
     </footer>
 
@@ -435,16 +449,16 @@
         <p>Выберите удобный способ — ответим и поможем подобрать группу.</p>
         <div class="modal-actions">
           <a class="contact-row" href="tel:+79514967452">
-            <strong>Позвонить</strong><span>+7 951 496 74 52</span>
+            <strong>Позвонить</strong>
           </a>
           <a class="contact-row" href="https://t.me/basketbolhasku" target="_blank" rel="noopener noreferrer">
-            <strong>Telegram</strong><span>@basketbolhasku</span>
+            <strong>Написать в Telegram</strong>
           </a>
           <a class="contact-row" href="https://vk.com/huskybasketball" target="_blank" rel="noopener noreferrer">
-            <strong>ВКонтакте</strong><span>vk.com/huskybasketball</span>
+            <strong>Написать во ВКонтакте</strong>
           </a>
           <a class="contact-row" href="mailto:bk.husky@mail.ru">
-            <strong>Почта</strong><span>bk.husky@mail.ru</span>
+            <strong>Написать на почту</strong>
           </a>
         </div>
       </div>
