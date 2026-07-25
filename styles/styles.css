@@ -460,7 +460,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
 .reviews-link strong, .reviews-link small { display: block; }
 .reviews-link strong { font-family: var(--font-display); font-size: 0.9rem; }
 .reviews-link small { margin-top: 3px; color: var(--ink-2); font-size: 0.8rem; }
-.reviews-yandex { flex: 0 0 40px; width: 40px; height: 40px; }
+.reviews-yandex { flex: 0 0 40px; width: 40px; height: 40px; object-fit: contain; }
 .reviews-arrow { margin-left: auto; color: var(--blue-deep); font-size: 1.35rem; }
 
 /* ---------- ФИНАЛЬНЫЙ CTA ---------- */
@@ -475,12 +475,6 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
 .final-actions .btn { min-width: 184px; border-radius: 14px; }
 .final .btn-ghost { color: var(--blue-deep); border-color: var(--blue-deep); }
 .final .btn-ghost:hover { color: #fff; background: var(--blue-deep); }
-.final-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 22px; font-weight: 600; }
-.final-links > span { color: var(--ink-2); }
-.final-links a { color: var(--blue-deep); border-bottom: 2px solid transparent; }
-.final-links a:hover { border-color: var(--ball); }
-.final-yandex-link { display: inline-flex; align-items: center; gap: 6px; }
-.final-yandex-link img { width: 20px; height: 20px; }
 
 /* ---------- FOOTER ---------- */
 .site-footer { background: var(--ink); color: var(--paper-card); padding: 48px 0 30px; position: relative; z-index: 2; }
@@ -519,14 +513,14 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
 }
 .modal-close:hover { background: var(--paper-2); }
 .modal-actions { display: grid; gap: 10px; }
-.modal-social-label { margin: 8px 0 -1px; color: var(--ink-2); font-size: 0.8rem; font-weight: 700; }
 .contact-row {
   position: relative; display: flex; justify-content: space-between; align-items: center; gap: 10px;
   padding: 14px 18px; border-radius: 12px; border: 1px solid var(--line); background: var(--paper);
   transition: transform 0.15s ease, border-color 0.2s;
 }
 .contact-row strong { font-family: var(--font-display); }
-.contact-row span { margin-left: auto; color: var(--ink-2); font-size: 0.82rem; text-align: right; }
+.contact-row--app { justify-content: flex-start; }
+.contact-app-icon { flex: 0 0 32px; width: 32px; height: 32px; object-fit: contain; }
 .contact-row::after { content: "↗"; color: var(--blue-deep); font-size: 1.15rem; line-height: 1; }
 .contact-row:hover { transform: translateX(3px); border-color: var(--blue); }
 
@@ -644,7 +638,6 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
   .hero-actions .btn { width: 100%; }
   .hero-offer { width: 100%; transform: none; }
   .final-actions .btn { width: 100%; }
-  .final-links { gap: 12px 18px; }
   .about-collage { min-height: 410px; }
   .about-main { width: 84%; height: 66%; left: 0; }
   .about-coach { width: 45%; height: 35%; }
@@ -663,6 +656,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
   .footer-inner { flex-direction: column; align-items: flex-start; }
   .footer-madeby { justify-content: flex-start; }
   .contact-row { align-items: flex-start; flex-direction: column; }
+  .contact-row--app { align-items: center; flex-direction: row; }
   .contact-row::after { position: absolute; right: 18px; }
   .lightbox-nav { width: 46px; height: 46px; }
 }
