@@ -220,23 +220,16 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
   text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
 }
 .hero-offer {
-  display: grid; gap: 2px; width: fit-content; max-width: 100%;
-  margin-top: 22px; padding: 13px 17px 14px;
+  display: block; width: fit-content; max-width: 100%;
+  margin-top: 22px; padding: 13px 17px;
   color: var(--ink); background: rgba(255, 255, 255, 0.96);
   border: 1px solid rgba(255, 255, 255, 0.8); border-left: 5px solid var(--ball);
   border-radius: 14px; box-shadow: 0 14px 34px rgba(2, 14, 26, 0.22);
   transform: rotate(-0.7deg);
 }
-.hero-offer-label { color: var(--ink-2); font-size: 0.78rem; font-weight: 700; }
 .hero-offer strong { font-family: var(--font-display); font-size: clamp(0.95rem, 1.7vw, 1.16rem); line-height: 1.25; }
 .hero-offer b { color: var(--ball); }
-.hero-offer-note { color: var(--ink-2); font-size: 0.82rem; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 24px 0; }
-.hero-points { display: flex; flex-wrap: wrap; gap: 18px; }
-.hero-points li { display: flex; align-items: center; gap: 8px; font-weight: 500; color: rgba(255, 255, 255, 0.88); }
-.ball-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--ball); position: relative; flex-shrink: 0; }
-.ball-dot::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background:
-  linear-gradient(transparent 45%, rgba(0,0,0,.35) 46%, rgba(0,0,0,.35) 54%, transparent 55%); }
 
 /* Заголовок hero на тёмном фоне */
 .hero .hero-title-top { color: #fff; text-shadow: 0 2px 18px rgba(0, 0, 0, 0.4); }
@@ -467,10 +460,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
 .reviews-link strong, .reviews-link small { display: block; }
 .reviews-link strong { font-family: var(--font-display); font-size: 0.9rem; }
 .reviews-link small { margin-top: 3px; color: var(--ink-2); font-size: 0.8rem; }
-.reviews-yandex {
-  display: grid; flex: 0 0 44px; width: 44px; height: 44px; place-items: center;
-  color: #fff; background: #fc3f1d; border-radius: 12px; font-family: Georgia, serif; font-size: 1.9rem; font-weight: 700;
-}
+.reviews-yandex { flex: 0 0 40px; width: 40px; height: 40px; }
 .reviews-arrow { margin-left: auto; color: var(--blue-deep); font-size: 1.35rem; }
 
 /* ---------- ФИНАЛЬНЫЙ CTA ---------- */
@@ -481,18 +471,16 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
   border: 1px solid var(--line);
 }
 .final-inner h2 { margin: 8px 0 14px; }
-.final-inner .lead { margin: 0 auto; }
-.personal-contact { display: grid; gap: 4px; width: fit-content; max-width: 100%; margin: 24px auto 0; }
-.personal-contact span { color: var(--ink-2); font-size: 0.88rem; font-weight: 600; }
-.personal-contact a { color: var(--blue-deep); font-family: var(--font-display); font-size: clamp(1rem, 2vw, 1.3rem); }
-.personal-contact a:hover { color: var(--ball); }
-.final-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 24px 0 20px; }
+.final-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 28px 0 20px; }
+.final-actions .btn { min-width: 184px; border-radius: 14px; }
 .final .btn-ghost { color: var(--blue-deep); border-color: var(--blue-deep); }
 .final .btn-ghost:hover { color: #fff; background: var(--blue-deep); }
 .final-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 22px; font-weight: 600; }
 .final-links > span { color: var(--ink-2); }
 .final-links a { color: var(--blue-deep); border-bottom: 2px solid transparent; }
 .final-links a:hover { border-color: var(--ball); }
+.final-yandex-link { display: inline-flex; align-items: center; gap: 6px; }
+.final-yandex-link img { width: 20px; height: 20px; }
 
 /* ---------- FOOTER ---------- */
 .site-footer { background: var(--ink); color: var(--paper-card); padding: 48px 0 30px; position: relative; z-index: 2; }
@@ -502,7 +490,6 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
 .footer-brand strong { font-family: var(--font-display); display: block; }
 .footer-brand span { font-size: 0.85rem; opacity: 0.75; }
 .footer-contacts { display: flex; flex-direction: column; gap: 4px; }
-.footer-contacts span { font-size: 0.78rem; color: rgba(255,255,255,0.66); }
 .footer-contacts a:hover { color: var(--blue-light); }
 .footer-socials { display: flex; gap: 12px; }
 .footer-socials a {
@@ -658,7 +645,6 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
   .hero-offer { width: 100%; transform: none; }
   .final-actions .btn { width: 100%; }
   .final-links { gap: 12px 18px; }
-  .hero-points { display: grid; gap: 10px; }
   .about-collage { min-height: 410px; }
   .about-main { width: 84%; height: 66%; left: 0; }
   .about-coach { width: 45%; height: 35%; }
