@@ -56,8 +56,8 @@
       photos: makePhotoSet("training", "Тренировка баскетбольного клуба Хаски"),
     },
     tournament: {
-      label: "Турнир 3×3",
-      photos: makePhotoSet("tournament", "Турнир Хаски по баскетболу три на три"),
+      label: "Турниры",
+      photos: makePhotoSet("tournament", "Турниры баскетбольного клуба Хаски"),
     },
     newyear: {
       label: "Новый год",

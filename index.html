@@ -35,7 +35,7 @@
 
     <link rel="icon" type="image/jpeg" href="./assets/logos/logo-new.jpg" />
     <link rel="apple-touch-icon" href="./assets/logos/logo-new.jpg" />
-    <link rel="preload" href="./assets/photos/hero-training.jpg" as="image" fetchpriority="high" />
+    <link rel="preload" href="./assets/photos/hero-team.jpg" as="image" fetchpriority="high" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -121,7 +121,7 @@
       <!-- ================= HERO ================= -->
       <section class="hero" id="hero">
         <div class="hero-bg" aria-hidden="true">
-          <img src="./assets/photos/hero-training.jpg" alt="" width="1920" height="1280" fetchpriority="high" decoding="async" />
+          <img src="./assets/photos/hero-team.jpg" alt="" width="1920" height="1280" fetchpriority="high" decoding="async" />
           <span class="hero-scrim"></span>
         </div>
 
@@ -137,8 +137,14 @@
               Живой клуб с турнирами, праздниками, поездками и летним лагерем.
             </p>
 
+            <div class="hero-offer" aria-label="Первая тренировка бесплатно">
+              <span class="hero-offer-label">Первое знакомство с клубом</span>
+              <strong>Первая тренировка <b>бесплатно</b></strong>
+              <span class="hero-offer-note">Познакомимся с тренером и подберём группу</span>
+            </div>
+
             <div class="hero-actions">
-              <button class="btn btn-primary" type="button" data-open-contact>Записаться на тренировку</button>
+              <button class="btn btn-primary" type="button" data-open-contact>Записаться бесплатно</button>
               <a class="btn btn-ghost" href="#events">Посмотреть мероприятия</a>
               <a class="btn btn-line" href="https://yandex.ru/maps/-/CTu0aUkq" target="_blank" rel="noopener noreferrer">Мы на карте</a>
             </div>
@@ -243,7 +249,7 @@
 
           <div class="life-tabs reveal" role="tablist" aria-label="Фото по темам">
             <button class="life-tab is-active" type="button" role="tab" aria-selected="true" data-gallery-category="training">Тренировки</button>
-            <button class="life-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-gallery-category="tournament">Турнир 3×3</button>
+            <button class="life-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-gallery-category="tournament">Турниры</button>
             <button class="life-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-gallery-category="newyear">Новый год</button>
             <button class="life-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-gallery-category="camp">Летний лагерь</button>
             <button class="life-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-gallery-category="portraits">Фотосессия</button>
@@ -328,7 +334,7 @@
         <div class="wrap">
           <a class="partner-card reveal" href="https://welcomeh.ru/" target="_blank" rel="noopener noreferrer" aria-label="Сайт партнёра Welcome Home">
             <div class="partner-photo">
-              <img src="./assets/partners/welcome-home-event.jpg" alt="Участники турнира 3×3 Хаски при поддержке Welcome Home" width="1600" height="1357" loading="lazy" />
+              <img src="./assets/partners/welcome-home-event.jpg" alt="Участники турнира Хаски при поддержке Welcome Home" width="1600" height="1357" loading="lazy" />
             </div>
             <div class="partner-copy">
               <span class="partner-label">При поддержке</span>
@@ -372,7 +378,8 @@
             </p>
             <a class="btn btn-primary" href="https://yandex.ru/maps/-/CTu0aUkq" target="_blank" rel="noopener noreferrer">Открыть на Яндекс.Картах</a>
             <div class="find-contacts">
-              <a href="tel:+79514967452">+7 951 496 74 52</a>
+              <a href="tel:+79514967452">Запись к Евгению: +7 (951) 496-74-52</a>
+              <a href="tg://resolve?phone=79514967452" aria-label="Написать Евгению в Telegram">Написать Евгению в Telegram</a>
               <a href="mailto:bk.husky@mail.ru">bk.husky@mail.ru</a>
             </div>
           </div>
@@ -391,19 +398,44 @@
         </div>
       </section>
 
+      <!-- ================= ОТЗЫВЫ ================= -->
+      <section class="section reviews" id="reviews">
+        <div class="wrap reviews-card reveal">
+          <div class="reviews-copy">
+            <span class="kicker">Мнение родителей</span>
+            <h2>Отзывы о «Хаски» на Яндекс Картах</h2>
+            <p class="lead">Читайте реальные впечатления родителей о клубе и делитесь своим после тренировки.</p>
+          </div>
+          <a class="reviews-link" href="https://yandex.ru/maps/-/CTu0aUkq" target="_blank" rel="noopener noreferrer">
+            <span class="reviews-yandex" aria-hidden="true">Я</span>
+            <span>
+              <strong>Яндекс Карты</strong>
+              <small>Открыть отзывы о клубе</small>
+            </span>
+            <span class="reviews-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+
       <!-- ================= ФИНАЛЬНЫЙ CTA ================= -->
       <section class="section final" id="contact">
         <div class="wrap final-inner reveal">
           <span class="sticker-caveat">давай в команду!</span>
-          <h2>Готовы попробовать баскетбол в «Хаски»?</h2>
-          <p class="lead">Напишите или позвоните — расскажем про тренировки, расписание и как записаться.</p>
-          <div class="final-actions">
-            <button class="btn btn-primary btn-lg" type="button" data-open-contact>Записаться на тренировку</button>
+          <h2>Первая тренировка — бесплатно</h2>
+          <p class="lead">Запишитесь, чтобы познакомиться с тренером, атмосферой клуба и подходящей группой.</p>
+          <div class="personal-contact">
+            <span>Запись на тренировку · Евгений</span>
+            <a href="tel:+79514967452">+7 (951) 496-74-52</a>
           </div>
-          <div class="final-links">
+          <div class="final-actions" aria-label="Связаться с Евгением">
+            <a class="btn btn-primary btn-lg" href="tel:+79514967452">Позвонить Евгению</a>
+            <a class="btn btn-ghost" href="tg://resolve?phone=79514967452">Написать в Telegram</a>
+          </div>
+          <div class="final-links" aria-label="Социальные сети клуба">
+            <span>Соцсети клуба:</span>
             <a href="https://vk.com/huskybasketball" target="_blank" rel="noopener noreferrer">ВКонтакте</a>
             <a href="https://t.me/basketbolhasku" target="_blank" rel="noopener noreferrer">Telegram</a>
-            <a href="https://yandex.ru/maps/-/CTu0aUkq" target="_blank" rel="noopener noreferrer">Яндекс.Карты</a>
+            <a href="https://yandex.ru/maps/-/CTu0aUkq" target="_blank" rel="noopener noreferrer">Отзывы на Яндекс Картах</a>
           </div>
         </div>
       </section>
@@ -420,7 +452,8 @@
           </div>
         </div>
         <div class="footer-contacts">
-          <a href="tel:+79514967452">+7 951 496 74 52</a>
+          <span>Запись: Евгений</span>
+          <a href="tel:+79514967452">+7 (951) 496-74-52</a>
           <a href="mailto:bk.husky@mail.ru">bk.husky@mail.ru</a>
         </div>
         <div class="footer-socials" aria-label="Социальные сети">
@@ -445,20 +478,23 @@
       <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
         <button class="modal-close" type="button" data-close-contact aria-label="Закрыть окно">×</button>
         <span class="sticker-caveat">на связи 🐺</span>
-        <h2 id="modal-title">Записаться на тренировку</h2>
-        <p>Выберите удобный способ — ответим и поможем подобрать группу.</p>
+        <h2 id="modal-title">Первая тренировка — бесплатно</h2>
+        <p>Позвоните Евгению или напишите ему — поможем познакомиться с клубом и подобрать группу.</p>
         <div class="modal-actions">
           <a class="contact-row" href="tel:+79514967452">
-            <strong>Позвонить</strong>
+            <strong>Позвонить Евгению</strong>
+            <span>+7 (951) 496-74-52</span>
+          </a>
+          <a class="contact-row" href="tg://resolve?phone=79514967452">
+            <strong>Написать Евгению в Telegram</strong>
+            <span>Откроется Telegram</span>
+          </a>
+          <p class="modal-social-label">Соцсети клуба</p>
+          <a class="contact-row" href="https://vk.com/huskybasketball" target="_blank" rel="noopener noreferrer">
+            <strong>ВКонтакте клуба</strong>
           </a>
           <a class="contact-row" href="https://t.me/basketbolhasku" target="_blank" rel="noopener noreferrer">
-            <strong>Написать в Telegram</strong>
-          </a>
-          <a class="contact-row" href="https://vk.com/huskybasketball" target="_blank" rel="noopener noreferrer">
-            <strong>Написать во ВКонтакте</strong>
-          </a>
-          <a class="contact-row" href="mailto:bk.husky@mail.ru">
-            <strong>Написать на почту</strong>
+            <strong>Telegram клуба</strong>
           </a>
         </div>
       </div>
