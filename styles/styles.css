@@ -475,18 +475,6 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
 .reviews-yandex { flex: 0 0 40px; width: 40px; height: 40px; object-fit: contain; }
 .reviews-arrow { margin-left: auto; color: var(--blue-deep); font-size: 1.35rem; }
 
-/* ---------- FAQ ---------- */
-.faq { background: var(--paper-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.faq-wrap { max-width: 900px; }
-.faq-list { display: grid; gap: 10px; }
-.faq-item { background: var(--paper-card); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow-sm); }
-.faq-item[open] { border-color: rgba(46, 134, 200, 0.4); }
-.faq-item summary { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 20px 22px; cursor: pointer; font-family: var(--font-display); font-size: clamp(0.95rem, 1.5vw, 1.08rem); font-weight: 600; list-style: none; }
-.faq-item summary::-webkit-details-marker { display: none; }
-.faq-item summary::after { content: "+"; flex: 0 0 auto; color: var(--blue-deep); font-family: var(--font-body); font-size: 1.55rem; font-weight: 400; line-height: 1; transition: transform 0.2s ease; }
-.faq-item[open] summary::after { transform: rotate(45deg); }
-.faq-item p { max-width: 70ch; padding: 0 22px 20px; color: var(--ink-2); }
-
 /* ---------- ФИНАЛЬНЫЙ CTA ---------- */
 .final { text-align: center; }
 .final-inner {
@@ -696,8 +684,6 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
   .contact-row--app { align-items: center; flex-direction: row; }
   .contact-row::after { position: absolute; right: 18px; }
   .lightbox-nav { width: 46px; height: 46px; }
-  .faq-item summary { padding: 18px; }
-  .faq-item p { padding: 0 18px 18px; }
 }
 
 /* ---------- Hero: заголовок «Баскетбольный клуб / HUSKY» ---------- */
