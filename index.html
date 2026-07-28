@@ -96,7 +96,7 @@
         </nav>
 
         <button class="btn btn-primary btn-sm header-cta" type="button" data-open-contact>
-          Записаться
+          Записаться на бесплатную тренировку
         </button>
 
         <button class="burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Открыть меню">
@@ -113,7 +113,7 @@
           <a href="#camp">Лагерь</a>
           <a href="#contact">Контакты</a>
         </nav>
-        <button class="btn btn-primary" type="button" data-open-contact>Записаться на тренировку</button>
+        <button class="btn btn-primary" type="button" data-open-contact>Записаться на бесплатную тренировку</button>
       </div>
     </header>
 
@@ -136,13 +136,14 @@
               Тренируем детей и подростков, растим технику, характер и командную игру.
               Живой клуб с турнирами, праздниками, поездками и летним лагерем.
             </p>
+            <p class="hero-age">Баскетбол для детей 7–17 лет</p>
 
             <div class="hero-offer" aria-label="Первая тренировка бесплатно">
               <strong>Первая тренировка <b>бесплатно</b></strong>
             </div>
 
             <div class="hero-actions">
-              <button class="btn btn-primary" type="button" data-open-contact>Записаться бесплатно</button>
+              <button class="btn btn-primary" type="button" data-open-contact>Записаться на бесплатную тренировку</button>
               <a class="btn btn-ghost" href="#events">Посмотреть мероприятия</a>
             </div>
           </div>
@@ -225,6 +226,11 @@
               <h3>Открытость клуба</h3>
               <p>Мы показываем жизнь команды в фото и соцсетях — всё честно и по-настоящему.</p>
             </article>
+          </div>
+
+          <div class="why-cta reveal">
+            <p>Познакомьтесь с тренером, командой и подходящей группой.</p>
+            <button class="btn btn-primary" type="button" data-open-contact>Записаться на бесплатную тренировку</button>
           </div>
         </div>
       </section>
@@ -316,7 +322,7 @@
             <div class="camp-tags">
               <span>Тренировки</span><span>Игры</span><span>Команда</span><span>Отдых</span>
             </div>
-            <button class="btn btn-primary" type="button" data-open-contact>Узнать про лагерь</button>
+            <button class="btn btn-primary" type="button" data-open-contact>Записаться на бесплатную тренировку</button>
           </div>
         </div>
       </section>
@@ -368,6 +374,17 @@
               Открой клуб на Яндекс.Картах, чтобы построить маршрут и посмотреть,
               как удобно добраться до зала.
             </p>
+            <div class="area-bases" aria-labelledby="areas-title">
+              <p class="area-bases-title" id="areas-title">Выберите удобный район</p>
+              <ul class="area-list" aria-label="Районы, где занимается клуб">
+                <li>Центр</li>
+                <li>Северный</li>
+                <li>Западный</li>
+                <li>Первомайский</li>
+                <li>Октябрьский</li>
+              </ul>
+              <p class="area-bases-note">Напишите район при записи — отправим точный адрес базы и расписание подходящей группы.</p>
+            </div>
             <a class="btn btn-primary" href="https://yandex.ru/maps/-/CTu0aUkq" target="_blank" rel="noopener noreferrer">Открыть на Яндекс.Картах</a>
           </div>
 
@@ -404,6 +421,38 @@
         </div>
       </section>
 
+      <!-- ================= FAQ ================= -->
+      <section class="section faq" id="faq">
+        <div class="wrap faq-wrap">
+          <div class="section-head reveal">
+            <span class="kicker">Коротко и по делу</span>
+            <h2>Частые вопросы</h2>
+          </div>
+          <div class="faq-list reveal">
+            <details class="faq-item" open>
+              <summary>С какого возраста можно заниматься?</summary>
+              <p>Приглашаем детей и подростков от 7 до 17 лет.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Где проходят тренировки?</summary>
+              <p>Работаем в Центре, Северном, Западном, Первомайском и Октябрьском районах. При записи отправим точный адрес подходящей базы.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Как узнать расписание?</summary>
+              <p>Оно зависит от возраста и района. Напишите нам — подскажем актуальные дни и время для вашей группы.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Можно прийти на пробную тренировку?</summary>
+              <p>Да, первая тренировка бесплатна. Познакомимся с ребёнком, тренером и атмосферой команды.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Сколько стоят занятия?</summary>
+              <p>Стоимость зависит от базы и количества занятий. Напишите или позвоните — отправим актуальные условия для вашего района и возраста.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
       <!-- ================= ФИНАЛЬНЫЙ CTA ================= -->
       <section class="section final" id="contact">
         <div class="wrap final-inner reveal">
@@ -411,7 +460,7 @@
           <h2>Первая тренировка бесплатно</h2>
           <p class="final-support">Познакомьтесь с тренером, командой и атмосферой клуба.</p>
           <div class="final-actions" aria-label="Запись на тренировку">
-            <button class="btn btn-primary btn-lg" type="button" data-open-contact>Записаться бесплатно</button>
+            <button class="btn btn-primary btn-lg" type="button" data-open-contact>Записаться на бесплатную тренировку</button>
           </div>
         </div>
       </section>
