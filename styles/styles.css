@@ -464,10 +464,11 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
 .reviews-arrow { margin-left: auto; color: var(--blue-deep); font-size: 1.35rem; }
 
 /* ---------- ФИНАЛЬНЫЙ CTA ---------- */
-.final { text-align: center; }
+.final { padding-block: clamp(72px, 7vw, 104px); text-align: center; }
 .final-inner {
-  max-width: 720px; margin: 0 auto; background: var(--paper-card);
-  border-radius: 28px; padding: clamp(40px, 6vw, 68px); box-shadow: var(--shadow-lg);
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 0.82fr); align-items: center; gap: clamp(28px, 5vw, 64px);
+  max-width: 1000px; margin: 0 auto; background: var(--paper-card);
+  border-radius: 28px; padding: clamp(28px, 4vw, 48px); box-shadow: var(--shadow-lg);
   border: 1px solid var(--line);
 }
 .final-inner h2 { margin: 8px 0 14px; }
@@ -481,6 +482,8 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
 .final-actions .btn:hover::after { transform: translateX(4px); }
 .final .btn-ghost { color: var(--blue-deep); border-color: var(--blue-deep); }
 .final .btn-ghost:hover { color: #fff; background: var(--blue-deep); }
+.final-photo { min-height: 310px; overflow: hidden; border-radius: 18px; box-shadow: var(--shadow-md); transform: rotate(1.25deg); }
+.final-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 52% 58%; }
 
 /* ---------- FOOTER ---------- */
 .site-footer { background: var(--ink); color: var(--paper-card); padding: 48px 0 30px; position: relative; z-index: 2; }
@@ -599,6 +602,8 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
   .partner-photo { min-height: 400px; max-height: 560px; }
   .reviews-card { grid-template-columns: 1fr; }
   .reviews-link { width: min(100%, 360px); }
+  .final-inner { grid-template-columns: 1fr; max-width: 720px; }
+  .final-photo { min-height: 260px; transform: rotate(-0.75deg); }
 }
 
 @media (max-width: 860px) {
