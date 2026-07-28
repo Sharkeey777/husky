@@ -466,7 +466,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
 /* ---------- ФИНАЛЬНЫЙ CTA ---------- */
 .final { padding-block: clamp(72px, 7vw, 104px); text-align: center; }
 .final-inner {
-  display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 0.82fr); align-items: center; gap: clamp(28px, 5vw, 64px);
+  position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 0.82fr); align-items: center; gap: clamp(28px, 5vw, 64px);
   max-width: 1000px; margin: 0 auto; background: var(--paper-card);
   border-radius: 28px; padding: clamp(28px, 4vw, 48px); box-shadow: var(--shadow-lg);
   border: 1px solid var(--line);
@@ -482,8 +482,14 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
 .final-actions .btn:hover::after { transform: translateX(4px); }
 .final .btn-ghost { color: var(--blue-deep); border-color: var(--blue-deep); }
 .final .btn-ghost:hover { color: #fff; background: var(--blue-deep); }
+.final-copy, .final-photo { position: relative; z-index: 1; }
 .final-photo { min-height: 310px; overflow: hidden; border-radius: 18px; box-shadow: var(--shadow-md); transform: rotate(1.25deg); }
 .final-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 52% 58%; }
+.final-burst { position: absolute; z-index: 0; width: 150px; height: 120px; color: var(--ball); pointer-events: none; }
+.final-burst svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.final-burst path { stroke: currentColor; stroke-width: 5; stroke-linecap: round; }
+.final-burst--top { top: -52px; left: -96px; transform: rotate(-12deg); }
+.final-burst--bottom { right: -102px; bottom: -52px; transform: rotate(8deg); }
 
 /* ---------- FOOTER ---------- */
 .site-footer { background: var(--ink); color: var(--paper-card); padding: 48px 0 30px; position: relative; z-index: 2; }
@@ -654,6 +660,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
   .brand-name { font-size: 1.12rem; }
   .hero-age { font-size: 1.4rem; }
   .final-actions .btn { width: 100%; }
+  .final-burst { display: none; }
   .about-collage { min-height: 410px; }
   .about-main { width: 84%; height: 66%; left: 0; }
   .about-coach { width: 45%; height: 35%; }
