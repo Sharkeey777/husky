@@ -201,7 +201,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
 .hero-stage { position: relative; }
 .hero {
   position: relative;
-  min-height: min(90svh, 860px);
+  min-height: 100svh;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -583,8 +583,8 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
 }
 
 @media (min-width: 861px) {
-  .hero-stage { height: min(120svh, 1120px); }
-  .hero { position: sticky; top: 0; height: min(90svh, 860px); }
+  .hero-stage { height: 132svh; }
+  .hero { position: sticky; top: 0; height: 100svh; }
 }
 
 @media (min-width: 861px) and (prefers-reduced-motion: no-preference) {
