@@ -587,20 +587,6 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
   .hero { position: sticky; top: 0; height: 100svh; }
 }
 
-@media (min-width: 861px) and (prefers-reduced-motion: no-preference) {
-  @supports (animation-timeline: scroll()) {
-    .hero-copy, .hero-scroll {
-      animation: hero-scroll-away linear both;
-      animation-timeline: scroll(root block);
-      animation-range: 0 34vh;
-    }
-  }
-}
-
-@keyframes hero-scroll-away {
-  to { opacity: 0; transform: translate3d(0, -32px, 0); }
-}
-
 /* ---------- Responsive ---------- */
 @media (max-width: 980px) {
   .hero-grid { grid-template-columns: 1fr; }
