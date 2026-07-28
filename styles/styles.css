@@ -469,8 +469,14 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
   border: 1px solid var(--line);
 }
 .final-inner h2 { margin: 8px 0 14px; }
+.final-support { max-width: 38ch; margin: 0 auto; color: var(--ink-2); font-size: clamp(1rem, 1.8vw, 1.15rem); }
 .final-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 28px 0 20px; }
-.final-actions .btn { min-width: 184px; border-radius: 14px; }
+.final-actions .btn {
+  min-width: min(100%, 318px); min-height: 66px; padding: 16px 28px; border-radius: 16px;
+  font-size: 1rem; box-shadow: 0 13px 25px rgba(23, 86, 143, 0.25);
+}
+.final-actions .btn::after { content: "→"; margin-left: 10px; font-size: 1.18em; transition: transform 0.2s ease; }
+.final-actions .btn:hover::after { transform: translateX(4px); }
 .final .btn-ghost { color: var(--blue-deep); border-color: var(--blue-deep); }
 .final .btn-ghost:hover { color: #fff; background: var(--blue-deep); }
 
@@ -602,7 +608,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
 
   .hero-copy { max-width: 100%; }
   .hero-bg img { object-position: 50% 58%; }
-  .hero .husky-word { font-size: clamp(3.5rem, 17vw, 5.6rem); }
+  .hero .husky-word { font-size: clamp(3.2rem, 15vw, 5.6rem); }
   .hero-scrim {
     background:
       linear-gradient(90deg, rgba(9, 26, 44, 0.92) 0%, rgba(9, 26, 44, 0.68) 72%, rgba(9, 26, 44, 0.42) 100%),
@@ -633,6 +639,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
   .header-inner { height: 64px; }
   .brand img { width: 40px; height: 40px; }
   .brand-name { font-size: 1.12rem; }
+  .hero-lead { max-width: 32ch; font-size: 1.05rem; }
   .hero-actions .btn { width: 100%; }
   .hero-offer { width: 100%; transform: none; }
   .final-actions .btn { width: 100%; }
@@ -642,7 +649,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
   .about-hoop { width: 52%; height: 32%; }
   .life-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 30px; }
   .life-tab { width: 100%; padding-inline: 10px; font-size: 0.78rem; }
-  .life-tab:last-child { grid-column: 1 / -1; }
+  .life-tab:last-child:nth-child(odd) { grid-column: 1 / -1; }
   .life-mosaic { grid-template-columns: 1fr; }
   .life-mosaic { grid-auto-rows: 250px; gap: 14px; }
   .life-photo:nth-child(n) { grid-column: span 1; grid-row: span 1; transform: none; }

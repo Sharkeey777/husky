@@ -42,11 +42,11 @@
   };
 
   /* ---------- Реальные фото клуба, разложенные по темам ---------- */
-  const makePhotoSet = (prefix, description) => Array.from({ length: 20 }, (_, index) => {
+  const makePhotoSet = (prefix, description, count = 20) => Array.from({ length: count }, (_, index) => {
     const number = String(index + 1).padStart(2, "0");
     return {
       src: `./assets/photos/gallery/${prefix}-${number}.jpg`,
-      alt: `${description}. Фото ${index + 1} из 20`,
+      alt: `${description}. Фото ${index + 1} из ${count}`,
     };
   });
 
@@ -70,6 +70,10 @@
     portraits: {
       label: "Фотосессия",
       photos: makePhotoSet("portrait", "Игрок баскетбольного клуба Хаски на фотосессии"),
+    },
+    rbl: {
+      label: "РБЛ",
+      photos: makePhotoSet("rbl", "Игровые моменты баскетбольного клуба Хаски в РБЛ", 19),
     },
   };
 
