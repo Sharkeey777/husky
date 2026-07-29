@@ -175,6 +175,58 @@
     });
   }
 
+  /* ---------- Правовые документы ---------- */
+  const legalModal = document.getElementById("legal-modal");
+  if (legalModal) {
+    let legalLastFocus = null;
+    const legalTitle = legalModal.querySelector("#legal-modal-title");
+    const legalSheet = legalModal.querySelector(".legal-modal-sheet");
+    const legalScroll = legalModal.querySelector(".legal-modal-scroll");
+    const legalPanels = Array.from(legalModal.querySelectorAll("[data-legal-document]"));
+
+    const openLegal = (documentName) => {
+      const selected = legalPanels.find((panel) => panel.dataset.legalDocument === documentName) || legalPanels[0];
+      if (!selected) return;
+
+      legalPanels.forEach((panel) => { panel.hidden = panel !== selected; });
+      legalTitle.textContent = selected.dataset.legalDocument === "terms"
+        ? "Пользовательское соглашение"
+        : "Политика обработки персональных данных";
+      legalLastFocus = document.activeElement;
+      legalModal.hidden = false;
+      legalModal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("is-locked");
+      setPageInert(true);
+      if (legalScroll) legalScroll.scrollTop = 0;
+      const closeButton = legalModal.querySelector(".legal-modal-close");
+      if (closeButton) closeButton.focus();
+    };
+
+    const closeLegal = () => {
+      legalModal.hidden = true;
+      legalModal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("is-locked");
+      setPageInert(false);
+      if (legalLastFocus && legalLastFocus.focus) legalLastFocus.focus();
+    };
+
+    document.querySelectorAll("[data-open-legal]").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        openLegal(link.dataset.openLegal);
+      });
+    });
+    legalModal.querySelectorAll("[data-close-legal]").forEach((button) => button.addEventListener("click", closeLegal));
+    document.addEventListener("keydown", (event) => {
+      if (legalModal.hidden) return;
+      if (event.key === "Escape") {
+        closeLegal();
+        return;
+      }
+      trapFocus(event, legalSheet);
+    });
+  }
+
   /* ---------- Тематическая фотогалерея + лайтбокс ---------- */
   const lifeMosaic = document.getElementById("life-mosaic");
   const galleryTabs = Array.from(document.querySelectorAll("[data-gallery-category]"));

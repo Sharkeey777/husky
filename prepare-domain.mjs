@@ -25,7 +25,7 @@ try {
 const output = path.join(root, "deploy");
 const sourceBaseUrl = "https://sharkeey777.github.io/husky";
 const copyTargets = ["assets", "styles", "js"];
-const requiredFiles = ["index.html", "privacy.html", "robots.txt", "sitemap.xml"];
+const requiredFiles = ["index.html", "privacy.html", "terms.html", "robots.txt", "sitemap.xml"];
 
 function copyDirectory(source, target) {
   mkdirSync(target, { recursive: true });
@@ -58,11 +58,13 @@ for (const target of copyTargets) {
 const replaceSiteUrl = (contents) => contents.split(sourceBaseUrl).join(siteUrl);
 const index = replaceSiteUrl(readFileSync(path.join(root, "index.html"), "utf8"));
 const privacy = replaceSiteUrl(readFileSync(path.join(root, "privacy.html"), "utf8"));
+const terms = replaceSiteUrl(readFileSync(path.join(root, "terms.html"), "utf8"));
 const robots = `User-agent: *\nAllow: /\n\nSitemap: ${siteUrl}/sitemap.xml\n`;
 const sitemap = replaceSiteUrl(readFileSync(path.join(root, "sitemap.xml"), "utf8"));
 
 writeFileSync(path.join(output, "index.html"), index);
 writeFileSync(path.join(output, "privacy.html"), privacy);
+writeFileSync(path.join(output, "terms.html"), terms);
 writeFileSync(path.join(output, "robots.txt"), robots);
 writeFileSync(path.join(output, "sitemap.xml"), sitemap);
 
