@@ -28,9 +28,10 @@
   --shadow-md: 0 16px 40px rgba(23, 86, 143, 0.14);
   --shadow-lg: 0 28px 70px rgba(23, 86, 143, 0.18);
 
-  --font-display: "Unbounded", system-ui, sans-serif;
-  --font-body: "Onest", system-ui, -apple-system, sans-serif;
-  --font-hand: "Caveat", "Onest", cursive;
+  /* Системные шрифты: страница не обращается к внешнему сервису Google Fonts. */
+  --font-display: Arial, "Arial Narrow", system-ui, sans-serif;
+  --font-body: "Segoe UI", Arial, system-ui, sans-serif;
+  --font-hand: "Segoe Print", "Comic Sans MS", cursive;
 
   --wrap: 1200px;
   --radius: 14px;
@@ -508,7 +509,24 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
 .footer-socials a:hover { background: rgba(255, 255, 255, 0.22); }
 .footer-madeby { display: flex; justify-content: center; align-items: center; gap: 14px; margin-top: 34px; padding-top: 26px; border-top: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.66); font-size: 0.8rem; }
 .footer-madeby img { width: clamp(170px, 20vw, 245px); height: auto; object-fit: contain; }
+.footer-legal { display: flex; justify-content: center; margin-top: 18px; font-size: 0.82rem; color: rgba(255,255,255,0.78); }
+.footer-legal a { text-decoration: underline; text-underline-offset: 3px; }
+.footer-legal a:hover { color: var(--blue-light); }
 .footer-copy { text-align: center; margin-top: 30px; font-size: 0.85rem; opacity: 0.65; }
+
+/* ---------- Политика обработки персональных данных ---------- */
+.policy-header { position: static; }
+.policy-main { padding: clamp(48px, 8vw, 96px) 0; }
+.policy-card { max-width: 900px; padding: clamp(28px, 5vw, 64px); background: var(--paper-card); border: 1px solid var(--line); border-radius: 24px; box-shadow: var(--shadow-md); }
+.policy-card h1 { margin: 8px 0 22px; font-size: clamp(2rem, 5vw, 3.5rem); }
+.policy-card h2 { margin: 38px 0 12px; font-size: clamp(1.2rem, 2.4vw, 1.55rem); }
+.policy-card p { max-width: 72ch; color: var(--ink-2); }
+.policy-card p + p { margin-top: 12px; }
+.policy-card a { color: var(--blue-deep); text-decoration: underline; text-underline-offset: 3px; }
+.policy-card ul { display: grid; gap: 9px; margin-top: 14px; padding-left: 22px; list-style: disc; color: var(--ink-2); }
+.policy-lead { max-width: 57ch; font-size: 1.12rem; }
+.policy-back { margin-left: auto; }
+.policy-footer { margin-top: 0; }
 
 /* ---------- МОДАЛКА ---------- */
 .modal, .lightbox { position: fixed; inset: 0; z-index: 300; display: grid; place-items: center; padding: 20px; }
@@ -678,6 +696,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
   .partner-logo { width: 180px; }
   .footer-inner { flex-direction: column; align-items: flex-start; }
   .footer-madeby { justify-content: flex-start; }
+  .footer-legal { justify-content: flex-start; }
   .contact-row { align-items: flex-start; flex-direction: column; }
   .contact-row--app { align-items: center; flex-direction: row; }
   .contact-row::after { position: absolute; right: 18px; }
