@@ -4,7 +4,8 @@
   "description": "Одностраничный лендинг в бумажном / scrapbook / editorial стиле. Чистый стек: **HTML + CSS + JavaScript**, без сборки и зависимостей.",
   "scripts": {
     "check": "node --check js/main.js",
-    "test": "node --check js/main.js"
+    "test": "node --check js/main.js",
+    "prepare:domain": "node prepare-domain.mjs"
   },
   "keywords": [],
   "author": "",
