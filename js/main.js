@@ -180,8 +180,6 @@
   if (legalModal) {
     let legalLastFocus = null;
     const legalTitle = legalModal.querySelector("#legal-modal-title");
-    const legalSheet = legalModal.querySelector(".legal-modal-sheet");
-    const legalScroll = legalModal.querySelector(".legal-modal-scroll");
     const legalPanels = Array.from(legalModal.querySelectorAll("[data-legal-document]"));
 
     const openLegal = (documentName) => {
@@ -197,7 +195,7 @@
       legalModal.setAttribute("aria-hidden", "false");
       document.body.classList.add("is-locked");
       setPageInert(true);
-      if (legalScroll) legalScroll.scrollTop = 0;
+      legalModal.scrollTop = 0;
       const closeButton = legalModal.querySelector(".legal-modal-close");
       if (closeButton) closeButton.focus();
     };
@@ -223,7 +221,7 @@
         closeLegal();
         return;
       }
-      trapFocus(event, legalSheet);
+      trapFocus(event, legalModal);
     });
   }
 
