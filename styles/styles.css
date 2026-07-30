@@ -497,6 +497,11 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
   border: 8px solid var(--paper-card); transform: rotate(-1deg);
 }
 .find-map iframe { display: block; border: 0; width: 100%; }
+.map-consent { display: grid; min-height: 420px; padding: 32px; place-content: center; gap: 16px; text-align: center; color: var(--ink-2); background: linear-gradient(135deg, var(--sky-soft), var(--paper-card)); }
+.map-consent p { max-width: 32ch; }
+.map-consent-button { justify-self: center; padding: 10px 16px; border: 1px solid var(--blue-deep); border-radius: 999px; color: var(--blue-deep); font-family: var(--font-display); font-size: 0.76rem; font-weight: 700; transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease; }
+.map-consent-button:hover { color: #fff; background: var(--blue-deep); }
+.map-consent-button:active { transform: scale(0.98); }
 
 /* ---------- ОТЗЫВЫ ---------- */
 .reviews { padding-top: clamp(42px, 5vw, 72px); }
@@ -569,6 +574,18 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
 .footer-legal-link { padding: 0; color: inherit; text-align: left; text-decoration: underline; text-decoration-color: rgba(255,255,255,0.35); text-underline-offset: 4px; transition: color 0.2s ease, text-decoration-color 0.2s ease; }
 .footer-legal-link:hover { color: var(--blue-light); text-decoration-color: currentColor; }
 .footer-copy { margin-top: 22px; font-size: 0.82rem; opacity: 0.65; }
+
+/* ---------- COOKIE CONSENT ---------- */
+.cookie-consent { position: fixed; z-index: 320; right: 20px; bottom: 20px; width: min(calc(100% - 40px), 460px); padding: 22px; border: 1px solid rgba(23, 86, 143, 0.2); border-radius: 16px; color: var(--ink); background: rgba(255,255,255,0.98); box-shadow: 0 20px 60px rgba(16,47,77,0.24); }
+.cookie-consent[hidden] { display: none; }
+.cookie-consent-title { font-family: var(--font-display); font-size: 0.9rem; font-weight: 700; }
+.cookie-consent p:not(.cookie-consent-title) { margin-top: 8px; color: var(--ink-2); font-size: 0.9rem; line-height: 1.5; }
+.cookie-consent-policy { margin-top: 8px; color: var(--blue-deep); font-size: 0.82rem; text-decoration: underline; text-underline-offset: 3px; }
+.cookie-consent-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.cookie-consent-actions .btn { min-height: 42px; padding: 10px 16px; font-size: 0.78rem; }
+.cookie-consent-reject { min-height: 42px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); font-family: var(--font-display); font-size: 0.75rem; font-weight: 700; transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease; }
+.cookie-consent-reject:hover { border-color: var(--blue); background: var(--paper); }
+.cookie-consent-reject:active, .cookie-consent-accept:active { transform: scale(0.98); }
 
 /* ---------- Политика обработки персональных данных ---------- */
 .policy-header { position: static; }
@@ -788,6 +805,13 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
   .contact-row--app { align-items: center; flex-direction: row; }
   .contact-row::after { position: absolute; right: 18px; }
   .lightbox-nav { width: 46px; height: 46px; }
+}
+
+@media (max-width: 460px) {
+  .map-consent { min-height: 320px; padding: 24px; }
+  .cookie-consent { right: 12px; bottom: 12px; width: calc(100% - 24px); padding: 18px; }
+  .cookie-consent-actions { flex-direction: column-reverse; }
+  .cookie-consent-actions > * { width: 100%; justify-content: center; }
 }
 
 /* ---------- Hero: заголовок «Баскетбольный клуб / HUSKY» ---------- */

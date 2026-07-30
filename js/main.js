@@ -187,9 +187,12 @@
       if (!selected) return;
 
       legalPanels.forEach((panel) => { panel.hidden = panel !== selected; });
-      legalTitle.textContent = selected.dataset.legalDocument === "terms"
-        ? "Пользовательское соглашение"
-        : "Политика обработки персональных данных";
+      const legalTitles = {
+        privacy: "Политика обработки персональных данных",
+        terms: "Пользовательское соглашение",
+        cookies: "Политика Cookie"
+      };
+      legalTitle.textContent = legalTitles[selected.dataset.legalDocument] || legalTitles.privacy;
       legalLastFocus = document.activeElement;
       legalModal.hidden = false;
       legalModal.setAttribute("aria-hidden", "false");
@@ -223,6 +226,120 @@
       }
       trapFocus(event, legalModal);
     });
+  }
+
+  /* ---------- Согласие на сервисы Яндекса ---------- */
+  const cookieConsent = document.getElementById("cookie-consent");
+  if (cookieConsent) {
+    const consentStorageKey = "husky_cookie_consent";
+    const consentLifetime = 180 * 24 * 60 * 60 * 1000;
+    const mapFrames = Array.from(document.querySelectorAll("[data-yandex-map-frame]"));
+    const mapPlaceholders = Array.from(document.querySelectorAll("[data-yandex-map-placeholder]"));
+    const metrikaId = document.querySelector('meta[name="yandex-metrika-id"]')?.content.trim() || "";
+    const canLoadMetrika = /^\d+$/.test(metrikaId);
+    let consentChoice = null;
+
+    const getStoredConsent = () => {
+      try {
+        const saved = JSON.parse(localStorage.getItem(consentStorageKey));
+        if (!saved || !["accepted", "necessary"].includes(saved.choice)) return null;
+        if (Date.now() - saved.savedAt > consentLifetime) return null;
+        return saved.choice;
+      } catch {
+        return null;
+      }
+    };
+
+    const saveConsent = (choice) => {
+      try {
+        localStorage.setItem(consentStorageKey, JSON.stringify({ choice, savedAt: Date.now() }));
+      } catch {
+        // Если браузер блокирует хранилище, выбор действует только в текущей сессии.
+      }
+    };
+
+    const disableMetrika = (disabled) => {
+      if (canLoadMetrika) window[`disableYaCounter${metrikaId}`] = disabled;
+    };
+
+    const loadYandexMaps = () => {
+      mapFrames.forEach((frame) => {
+        if (!frame.getAttribute("src") && frame.dataset.src) frame.setAttribute("src", frame.dataset.src);
+        frame.hidden = false;
+      });
+      mapPlaceholders.forEach((placeholder) => { placeholder.hidden = true; });
+    };
+
+    const loadMetrika = () => {
+      if (!canLoadMetrika || document.getElementById("yandex-metrika-script")) return;
+      window.ym = window.ym || function metrikaQueue(...args) {
+        (window.ym.a = window.ym.a || []).push(args);
+      };
+      window.ym.l = Number(new Date());
+      window.ym(metrikaId, "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true
+      });
+      const script = document.createElement("script");
+      script.id = "yandex-metrika-script";
+      script.async = true;
+      script.src = "https://mc.yandex.ru/metrika/tag.js";
+      document.head.appendChild(script);
+    };
+
+    const removeMetrikaData = () => {
+      try {
+        Object.keys(localStorage).filter((key) => key.startsWith("_ym")).forEach((key) => localStorage.removeItem(key));
+      } catch {
+        // Браузер может запрещать доступ к localStorage.
+      }
+      document.cookie.split(";").forEach((value) => {
+        const name = value.trim().split("=")[0];
+        if (name.startsWith("_ym")) document.cookie = `${name}=; Max-Age=0; path=/`;
+      });
+    };
+
+    const applyConsent = (choice) => {
+      if (choice === "accepted") {
+        disableMetrika(false);
+        loadYandexMaps();
+        loadMetrika();
+      } else {
+        disableMetrika(true);
+      }
+    };
+
+    const showConsent = () => { cookieConsent.hidden = false; };
+    const hideConsent = () => { cookieConsent.hidden = true; };
+
+    const chooseConsent = (choice) => {
+      const shouldReload = consentChoice === "accepted" && choice === "necessary";
+      consentChoice = choice;
+      saveConsent(choice);
+      if (shouldReload) removeMetrikaData();
+      applyConsent(choice);
+      hideConsent();
+      if (shouldReload) window.location.reload();
+    };
+
+    document.querySelectorAll("[data-open-cookie-settings]").forEach((button) => {
+      button.addEventListener("click", (event) => {
+        event.preventDefault();
+        showConsent();
+      });
+    });
+    document.querySelectorAll("[data-cookie-accept]").forEach((button) => button.addEventListener("click", () => chooseConsent("accepted")));
+    document.querySelectorAll("[data-cookie-reject]").forEach((button) => button.addEventListener("click", () => chooseConsent("necessary")));
+
+    consentChoice = getStoredConsent();
+    if (consentChoice) {
+      applyConsent(consentChoice);
+      hideConsent();
+    } else {
+      disableMetrika(true);
+      showConsent();
+    }
   }
 
   /* ---------- Тематическая фотогалерея + лайтбокс ---------- */
