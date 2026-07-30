@@ -233,8 +233,6 @@
   if (cookieConsent) {
     const consentStorageKey = "husky_cookie_consent";
     const consentLifetime = 180 * 24 * 60 * 60 * 1000;
-    const mapFrames = Array.from(document.querySelectorAll("[data-yandex-map-frame]"));
-    const mapPlaceholders = Array.from(document.querySelectorAll("[data-yandex-map-placeholder]"));
     const metrikaId = document.querySelector('meta[name="yandex-metrika-id"]')?.content.trim() || "";
     const canLoadMetrika = /^\d+$/.test(metrikaId);
     let consentChoice = null;
@@ -260,14 +258,6 @@
 
     const disableMetrika = (disabled) => {
       if (canLoadMetrika) window[`disableYaCounter${metrikaId}`] = disabled;
-    };
-
-    const loadYandexMaps = () => {
-      mapFrames.forEach((frame) => {
-        if (!frame.getAttribute("src") && frame.dataset.src) frame.setAttribute("src", frame.dataset.src);
-        frame.hidden = false;
-      });
-      mapPlaceholders.forEach((placeholder) => { placeholder.hidden = true; });
     };
 
     const loadMetrika = () => {
@@ -303,7 +293,6 @@
     const applyConsent = (choice) => {
       if (choice === "accepted") {
         disableMetrika(false);
-        loadYandexMaps();
         loadMetrika();
       } else {
         disableMetrika(true);
